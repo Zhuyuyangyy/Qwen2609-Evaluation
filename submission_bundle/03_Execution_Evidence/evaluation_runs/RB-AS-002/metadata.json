@@ -1,0 +1,22 @@
+{
+  "task_id": "RB-AS-002",
+  "repository": "AgentShield_V3",
+  "difficulty": "medium",
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "human_intervention_count": 0,
+  "execution_completed": true,
+  "grade_completed": true,
+  "files_modified_count": 1,
+  "modified_paths": [
+    "repo_snapshot/backend/app/shield/session_ttl.py"
+  ],
+  "frozen_file_violations": 0,
+  "workspace_path": "workspaces\\RB-AS-002",
+  "run_status": "VALID_SUBMISSION",
+  "valid_model_submission": true,
+  "semantic_human_intervention_count": 0,
+  "manual_resume_count": null,
+  "harness_runtime_error_count": null,
+  "implementation_files_modified": 1
+}

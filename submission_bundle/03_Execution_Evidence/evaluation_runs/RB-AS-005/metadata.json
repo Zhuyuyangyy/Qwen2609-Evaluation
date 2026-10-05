@@ -1,0 +1,55 @@
+{
+  "human_intervention_count": 0,
+  "execution_completed": true,
+  "execution_error": null,
+  "environment_error": null,
+  "timed_out": false,
+  "constraint_violation": false,
+  "test_gaming_suspected": false,
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "grade_completed": true,
+  "task_id": "RB-AS-005",
+  "repository": "AgentShield_V3",
+  "difficulty": "hard",
+  "task_type": "behavior_preserving_refactor",
+  "public_test_command": "pytest -q public_tests/test_public.py",
+  "test_command": "pytest -q",
+  "public_tests": {
+    "passed": 5,
+    "failed": 0,
+    "exit_code": 0
+  },
+  "hidden_tests": {
+    "passed": 7,
+    "failed": 0,
+    "exit_code": 0
+  },
+  "regression_tests": {
+    "passed": 640,
+    "failed": 0,
+    "skipped": 1,
+    "exit_code": 0
+  },
+  "files_modified_count": 2,
+  "modified_paths": [
+    "repo_snapshot/backend/app/shield/provenance_signals.py",
+    "repo_snapshot/backend/app/shield/trust_policy.py"
+  ],
+  "grader_version": "1.0.0",
+  "grader_exit_code": 0,
+  "grader_invocation": "python RealRepoBench-Q2609/grader/score.py <isolated bundle>",
+  "isolation": {
+    "method": "hidden tests and grader executed on an isolated staging copy outside the frozen benchmark; outputs redirected to files; hidden results never surfaced to the agent session",
+    "frozen_benchmark_modified": false,
+    "grader_modified": false,
+    "workspace_snapshot_untouched": true
+  },
+  "notes": "Tool-name canonicalisation converged onto a single implementation: provenance_signals._normalise_tool now owns it (and is the only remaining site of the str(... or '').lower() expression), and trust_policy.classify_tool reaches it through a module-attribute lookup at call time rather than importing its own reference, so neither path can drift. No function was deleted and no visibility changed: _normalise_tool keeps its name and private visibility, _canonicalise_tool_name is a new private wrapper in trust_policy, and classify_tool / describe_policy / trust_prior / trust_rank plus extract_provenance_signals keep their signatures and return structures. Behaviour parity was checked over the frozen input domain, including empty and non-string values: classify_tool returns the same labels and extract_provenance_signals the same signals. The repository suite is 640 passed, 1 skipped -- identical to the pristine baseline, which was re-measured by stashing the change. The upstream suite counts one extra parameterised case in the submitted tree (test_no_label_leakage scans backend/app/shield/ module sources, so a rewritten helper adds a module), and that case passes.",
+  "run_status": "VALID_SUBMISSION",
+  "valid_model_submission": true,
+  "semantic_human_intervention_count": 0,
+  "manual_resume_count": null,
+  "harness_runtime_error_count": null,
+  "implementation_files_modified": 2
+}

@@ -1,0 +1,356 @@
+{
+  "description": "Canonical evidence inventory for the AgentDojo live evaluation. Lists every artifact a paper or spec claim rests on, so the claim stays auditable from version control alone. This file records an index, not a measurement: it must never be read as evidence in place of the artifact it points at.",
+  "hash_encoding": "sha256 and size are over LF-normalised content (what Git stores), so a core.autocrlf=true checkout does not invalidate them",
+  "generated_for": "USENIX Security '27 cycle 2 submission",
+  "canonical_artifacts": [
+    {
+      "path": "benchmark/results/agentdojo_live/deepseek-10x6x3/manifest.json",
+      "sha256": "47728a45b61a9bd91cbc1e0a2287736596741e76865de2885db9d67602edaf7d",
+      "size": 2971,
+      "purpose": "Frozen Phase 2 run config, task rule, threshold policy and adapter notes",
+      "claim_supported": "spec 6.1: the Phase 2 cell set and its pre-registered rules are fixed before the cells exist",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/deepseek-10x6x3/index.jsonl",
+      "sha256": "d2ca6166c7812b36c0567af058f1dfba4b6651b253a49a19be1501a74855db3c",
+      "size": 211031,
+      "purpose": "Per-cell utility/security/joint outcome for Phase 2, 694 cells",
+      "claim_supported": "spec 6.1: all 660 attack cells graded security=False, i.e. no headroom on this model",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/deepseek-10x6x3/report.json",
+      "sha256": "fac1d8bcd5e14086ad7d9ca6b48122b1d6da60f00b1dbc5bd2144cc202f9c12b",
+      "size": 12072,
+      "purpose": "Aggregated ASR / utilities / joint 2x2 / gate stats for Phase 2",
+      "claim_supported": "spec 6.1 table (ASR 0.000 both rungs, utility 0.964 / 0.782, 193 blocks) and spec 7's joint correction record",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/deepseek-10x6x3/sidecar.jsonl",
+      "sha256": "69012e901322c07c1fb3e4de9260c1b486e4799ac301eb330c30c9a7988e4428",
+      "size": 1363695,
+      "purpose": "Phase 2 gate calls: decision, signal, risk per call",
+      "claim_supported": "spec 6.1 finding 2: all 193 blocks are send_email, concentrated on user_task_25 / user_task_33",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/diagnose-deepseek-task25-33/manifest.json",
+      "sha256": "0aa324745ee9d79cbf5902afa36667161e61f2c9cfb62f5b0ae6610529576e8e",
+      "size": 2911,
+      "purpose": "Diagnosis run config",
+      "claim_supported": "spec 6.2 Step A/D: the diagnosis ran under the frozen rung with rules_changed=false",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/diagnose-deepseek-task25-33/index.jsonl",
+      "sha256": "f5ae9b6adce94b92d02c913ec2c786e8ba965b694697d88032a638d7d841e4b2",
+      "size": 1128,
+      "purpose": "Per-cell outcomes for the diagnosis leg",
+      "claim_supported": "spec 6.2 Step A/D post-hoc record",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/diagnose-deepseek-task25-33/diagnosis.json",
+      "sha256": "b4a57ab0a756cae5928dcc8602f8e41b696986657aa336fba6c3438f8c891833",
+      "size": 121795,
+      "purpose": "Per-gate-call engine decomposition plus leave-one-out counterfactuals",
+      "claim_supported": "spec 6.2 Step A/D: which signal is the necessary/sufficient cause of the 0.95 BLOCK on the two legitimate send_email tasks",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/diagnose-deepseek-task25-33/sidecar.jsonl",
+      "sha256": "4b2eb97021c196793b1f77d0f25f43406b3e1f8a5203ec2b6d8c230fea540afb",
+      "size": 44338,
+      "purpose": "Diagnosis-leg gate calls",
+      "claim_supported": "spec 6.2 Step A/D post-hoc record",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-relay-gpt55-injecagent/manifest.json",
+      "sha256": "1fb3394cfeed99c188bc4f6c45e84d7a4a36434f3bb0903dce9547291bb5a6de",
+      "size": 2989,
+      "purpose": "Relay arm config, provider facts (provider_base_url, requested_model, model_names_key=null)",
+      "claim_supported": "spec 6.2 amendment: the relay arm may not be headline tier; the attack substitution is forced by the provider catalogue",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-relay-gpt55-injecagent/index.jsonl",
+      "sha256": "5467fbbb1eae4bacea8dc093fe53afcb4b0c76bd55dde4d55f412cf0000465f0",
+      "size": 32116,
+      "purpose": "Per-cell outcomes for the relay headroom pilot",
+      "claim_supported": "spec 6.2: the relay pilot reported NOT MET and the negative is kept",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-relay-gpt55-injecagent/report.json",
+      "sha256": "66c2c4a0128f9f7ca5d5f630a07068bd900dc6359a1f8e8866f1417370e6274a",
+      "size": 7672,
+      "purpose": "Relay headroom verdict (report['headroom'])",
+      "claim_supported": "spec 6.2: pre-registered min_headroom=10 not reached on this arm",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-relay-gpt55-injecagent/sidecar.jsonl",
+      "sha256": "7abc74167f8fbdfa669a72be98aed91dd00b9dfc48a811da3f52a98da03c11d7",
+      "size": 229404,
+      "purpose": "Relay arm gate calls (passthrough under no_governance)",
+      "claim_supported": "spec 6.2: under no_governance every gate call is allow/executed",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b/manifest.json",
+      "sha256": "2c02026d79dfaeb97f78a51b66a4f58ba21233a050964d07c77b3d03a35d4f6b",
+      "size": 3115,
+      "purpose": "Local-vLLM 120B headroom arm config, pinned model/revision, parser and exact serve command",
+      "claim_supported": "spec 6.2 local-vLLM arm: the arm substitutes for the pending official Step B and is re-runnable because weights, server version, parser and command line are pinned",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b/index.jsonl",
+      "sha256": "55cb1a0cf58d5c74edab619e9d5a83a3042627c55e981400be839b67ede8ef9e",
+      "size": 36800,
+      "purpose": "Per-cell outcomes, 114 cells (90 attack, 10 benign, 14 validity)",
+      "claim_supported": "spec 6.2 headroom result: security_true_cells = 16 of 90, asr = 0.178, headroom MET -- the licence for Step 9",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b/report.json",
+      "sha256": "10e5f47ebbb7f2c7960c70a14f131c662e6d380b294048fd54385e03464df683",
+      "size": 7610,
+      "purpose": "Headroom verdict, ungoverned utilities and joint 2x2",
+      "claim_supported": "spec 6.2: headroom_met=true and the ungoverned 61/13/3/13 joint split",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b/sidecar.jsonl",
+      "sha256": "ec368f9f79c2ee96dad843b9855264605b94352cd7ae277c2e773c017261d533",
+      "size": 14932,
+      "purpose": "Gate calls of the last invocation of the headroom arm",
+      "claim_supported": "spec 6.2: truncated per invocation, so this covers only the final attempt's cells",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b/preregistration.manifest.snapshot.json",
+      "sha256": "2627fa6753dcc9562bbe24bbd30aae498e78cb2c1e00680ecdd3534f96a9976b",
+      "size": 2954,
+      "purpose": "Verbatim snapshot of the manifest as pre-registered, before the first attack cell",
+      "claim_supported": "spec 6.2: the pre-registration record, cited because created_at is rewritten at every start",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b-v041/manifest.json",
+      "sha256": "c11d18326e7df6b1a2ad7101e35dea8aaa5e61a000b7b7a9fd77cdd9013bfad2",
+      "size": 2752,
+      "purpose": "Governed arm config; records that no no_governance attack arm lives here and min_headroom is deliberately absent",
+      "claim_supported": "spec 6.2 step 9: a separate directory is required because rungs is in CACHE_COMPARED_KEYS",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b-v041/index.jsonl",
+      "sha256": "321139980f2aa07cf99c7417c4f4e58d3922884dd6664b0793b7e13a822266ef",
+      "size": 32887,
+      "purpose": "Per-cell outcomes, 104 cells (80 attack, 10 benign, 14 validity)",
+      "claim_supported": "spec 6.2 step 9: authority for the paired 80-cell intersection, the 0.1875 -> 0.0000 ASR margin, both utilities and the joint 2x2",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b-v041/report.json",
+      "sha256": "d68cdd138989ed441cd23408f5f5b5b95c65e8178f08e44f1d42367f4cd6c2fb",
+      "size": 6953,
+      "purpose": "Governed-arm aggregates; per_model_rung joint_outcomes.counts is the machine check on the step 9 table",
+      "claim_supported": "spec 6.2 step 9 table column B. Its gate_stats covers only 3 cells with a summary -- see the note below.",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b-v041/sidecar.jsonl",
+      "sha256": "874a6a140f45f78662bbdb0cccd6752d27560b72eb46af52cf210bfb902c9b03",
+      "size": 140436,
+      "purpose": "Gate calls of the last invocation only (3 cells with a summary)",
+      "claim_supported": "spec 6.2 step 9: insufficient on its own; superseded by attribution.json for per-cell coverage",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b-v041/attribution.json",
+      "sha256": "fb037117a398c7daa062af41f0ef5b2ec2b1fadeb5ac1d2510e62b171334d2ed",
+      "size": 25212,
+      "purpose": "Derived per-cell blocked_calls for the 80 paired attack cells, fused from the per-invocation snapshots",
+      "claim_supported": "spec 6.2 step 9 flip/utility split: 6 of 15 security flips occurred in cells where the gate intervened, 3 have blocked_calls=0 and 6 are unmapped (57 of 80 cells mapped)",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__vllm-nemotron-120b/manifest.json",
+      "sha256": "2499d5a35d4b0558ae6869ce728e427b1356ab035d2ca522bf2d2aa6fc562d1f",
+      "size": 2140,
+      "purpose": "Ablation smoke workspace config (8 cells)",
+      "claim_supported": "spec 6.2: the 120B ran the same 8 cells as the 30B and produced asr 0.750 vs 0.000",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__vllm-nemotron-120b/index.jsonl",
+      "sha256": "bbb92ab0b295f524711908f63992f36a4c2a04c1d931b88f5216296225a8129f",
+      "size": 2505,
+      "purpose": "Ablation smoke per-cell outcomes",
+      "claim_supported": "spec 6.2 ablation gate: 3 of 4 attack cells security=True, the licence to expand",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__vllm-nemotron-120b/report.json",
+      "sha256": "844c45020a6f36c7e170cb37ffe02e300787002b98451f15079e2d3dece9c05d",
+      "size": 5507,
+      "purpose": "Ablation smoke aggregates",
+      "claim_supported": "spec 6.2 ablation gate",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__vllm-nemotron-120b/sidecar.jsonl",
+      "sha256": "af6dc867007630ff2383355f10aec1af0db64746d23cf9085fe375e8216c62f4",
+      "size": 3375,
+      "purpose": "Ablation smoke gate calls",
+      "claim_supported": "spec 6.2 ablation gate",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__vllm-nemotron-30b/manifest.json",
+      "sha256": "deeb7a60514a371fb1620b8374c04279a8154cf526623f1de90518b72cede2a5",
+      "size": 2130,
+      "purpose": "Ablation smoke workspace config (8 cells)",
+      "claim_supported": "spec 6.2: the 30B ran first, as required, and showed no headroom",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__vllm-nemotron-30b/index.jsonl",
+      "sha256": "6685d1336634ad71a08c2d68f95e58119103256aa46998615a83ce474eea9cc7",
+      "size": 2503,
+      "purpose": "Ablation smoke per-cell outcomes",
+      "claim_supported": "spec 6.2 ablation gate: asr 0.000, security_true_cells = 0 of 4",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__vllm-nemotron-30b/report.json",
+      "sha256": "03824fbf7cee5a1e52b9ddb84c637c9c59e5f6bb07af8bd03726d5d4638fb7f4",
+      "size": 5493,
+      "purpose": "Ablation smoke aggregates",
+      "claim_supported": "spec 6.2 ablation gate",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__vllm-nemotron-30b/sidecar.jsonl",
+      "sha256": "d86cc7410fb683dc4c4a8596da5d77b78f96cfaf758e29884741107b309f2079",
+      "size": 10395,
+      "purpose": "Ablation smoke gate calls",
+      "claim_supported": "spec 6.2 ablation gate",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/smoke-relay-luna/manifest.json",
+      "sha256": "8dafc2863cf161de2dda9f8ef79d5c8d69eb8b88be5ceeaeed1e587bc4151308",
+      "size": 1946,
+      "purpose": "Relay smoke config",
+      "claim_supported": "spec 5: relay provider facts measured before any probe cell was paid for",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/smoke-relay-luna/index.jsonl",
+      "sha256": "ab8d56d1f3c0d03491d5bb5efe1d65893daf8879d6b33e2f286b92298580f07d",
+      "size": 311,
+      "purpose": "Relay smoke per-cell outcomes",
+      "claim_supported": "spec 5: relay wiring/smoke tier, never headline",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/smoke-relay-luna/report.json",
+      "sha256": "803ea4cc2e20afedb87776ad42c24e370feefa59460eeb2ad710f8064e74ad1b",
+      "size": 6045,
+      "purpose": "Relay smoke aggregates",
+      "claim_supported": "spec 5: relay wiring/smoke tier, never headline",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/smoke-relay-luna/sidecar.jsonl",
+      "sha256": "99c5a00e70816edb3aa22db494acdac1477edfa959e5fabcd70f70edcad4f017",
+      "size": 977,
+      "purpose": "Relay smoke gate calls",
+      "claim_supported": "spec 5: relay wiring/smoke tier, never headline",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/smoke-relay-gpt55-injecagent/manifest.json",
+      "sha256": "a29e4e8151399bcb8ae2993ba52c9f9c2725536356c5af00d019b73cdb9b77af",
+      "size": 1969,
+      "purpose": "Relay smoke config",
+      "claim_supported": "spec 5/6.2: relay warning probe (model_names_key=null, name_addressing_attacks_allowed=false)",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/smoke-relay-gpt55-injecagent/index.jsonl",
+      "sha256": "4ad63d4d739f093e7003e3a1d0090a6855d8c9968dd98c6da78bfd55ebb6af86",
+      "size": 312,
+      "purpose": "Relay smoke per-cell outcomes",
+      "claim_supported": "spec 5/6.2: relay warming probe, never headline",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/smoke-relay-gpt55-injecagent/report.json",
+      "sha256": "e103d9b5f09e583e2ba03e91af8072ee0dc61c88340d484b37d23584dfbea81d",
+      "size": 6063,
+      "purpose": "Relay smoke aggregates",
+      "claim_supported": "spec 5/6.2: relay warming probe, never headline",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/smoke-relay-gpt55-injecagent/sidecar.jsonl",
+      "sha256": "012071ea6bd85df99958b878fb0369192d9ccd1e91a4f82d0ae93bfc8a6c5b14",
+      "size": 1062,
+      "purpose": "Relay smoke gate calls",
+      "claim_supported": "spec 5/6.2: relay warming probe, never headline",
+      "spec_section": "docs/superpowers/specs/2026-09-26-agentdojo-live-eval-design.md"
+    }
+  ],
+  "deliberately_not_committed": [
+    {
+      "path": "benchmark/results/agentdojo_live/deepseek-10x6x3/agentshield-*/",
+      "reason": "raw per-cell AgentDojo outputs for Phase 2; regenerable, large, not cited directly"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/diagnose-deepseek-task25-33/agentshield-*/",
+      "reason": "raw per-cell outputs for the diagnosis leg; regenerable"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/workspace__v1.2.2__deepseek/",
+      "reason": "duplicate DeepSeek workspace cache (agentdojo-no-defense plus both rungs)"
+    },
+    {
+      "path": "benchmark/results/agentdojo_live/headroom-probe/",
+      "reason": "scratch probe workspace, superseded by the tracked smoke workspaces"
+    },
+    {
+      "path": ".tmp/",
+      "reason": "scratch: server logs, forwarder logs, snapshot files, probe scripts. The two entries the spec cites were copied into tracked canonical paths above; the rest is runtime debris."
+    }
+  ],
+  "known_gaps": [
+    {
+      "artifact": "benchmark/results/agentdojo_live/headroom-vllm-nemotron-120b-v041/report.json",
+      "field": "gate_stats.cells_with_summary",
+      "observed": 3,
+      "what_it_means": "The 120B governed report's gate statistics describe only the 3 cells of the run's final invocation, because the pre-per-cell sidecar was truncated at the top of every invocation and cached cells wrote no rows. The field is not wrong about what it counted; it is easy to misread as covering the arm. Per-cell coverage for the paired 80-cell comparison is in attribution.json next to it (57 of 80 mapped).",
+      "remedy_applied_for_future_runs": "one sidecar artifact per cell, keyed by cell identity, written atomically (harness change; gate_source_sha256 moved, so these directories are no longer resumable under their run-tags)"
+    },
+    {
+      "artifact": "headroom-vllm-nemotron-120b vs headroom-vllm-nemotron-120b-v041",
+      "field": "valid_injection_tasks",
+      "observed": "9 solvable in the 2026-09-27 arm, 8 in the 2026-09-29 arm; difference is injection_task_10 alone",
+      "what_it_means": "The two arms measured their own validity legs two days apart at temperature 0 and disagreed on one task, so every Step 9 number is computed on the 80-cell intersection of the two frozen sets rather than on either directory's own denominator.",
+      "remedy_applied_for_future_runs": "--validity-only writes one shared validity_freeze.json whose sha256 every arm must cite; the freeze is in CACHE_COMPARED_KEYS and a mismatch fails closed (exit 6)"
+    },
+    {
+      "artifact": "spec 6.2 step 9",
+      "field": "gate attribution coverage",
+      "observed": "57 of 80 paired attack cells",
+      "what_it_means": "6 of the 15 security flips occurred in cells where the gate actually intervened, 3 have blocked_calls=0 and 6 (all user_task_28) are unmapped. Occurrence is not proof of cause, which is the wording the spec already uses.",
+      "remedy_applied_for_future_runs": "per-cell sidecar artifacts remove the truncation, so the confirmatory replication reports attribution at full coverage"
+    }
+  ]
+}

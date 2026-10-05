@@ -1,0 +1,64 @@
+{
+  "benchmark": "RealRepoBench-Q2609",
+  "version": "0.1",
+  "frozen_tasks": 8,
+  "evaluated_tasks": 7,
+  "graded_tasks": 7,
+  "successful_tasks": 7,
+  "task_success_rate": null,
+  "evaluation_complete": false,
+  "missing_tasks": [
+    "RB-AS-004"
+  ],
+  "provisional_task_success_rate": 1.0,
+  "provisional_note": "only 7 of 8 frozen tasks are graded, so this is not the formal Task Success Rate",
+  "public_test_pass_rate": 1.0,
+  "hidden_test_pass_rate": 1.0,
+  "target_fix_rate": 1.0,
+  "regression_pass_rate": 1.0,
+  "constraint_violation_rate": 0.0,
+  "mean_total_score": 100.0,
+  "median_duration_seconds": null,
+  "duration_coverage": "2/8",
+  "median_duration_status": "NOT_AVAILABLE",
+  "recorded_semantic_human_interventions": 0,
+  "semantic_intervention_coverage": "7/8",
+  "semantic_intervention_coverage_note": "The count covers only the tasks whose intervention count was recovered; it is not a whole-benchmark total.",
+  "by_repository": {
+    "AgentShield_V3": {
+      "graded": 4,
+      "successful": 4,
+      "task_success_rate": 1.0
+    },
+    "emotion-like-functional-modulation-main": {
+      "graded": 3,
+      "successful": 3,
+      "task_success_rate": 1.0
+    }
+  },
+  "by_task_type": {
+    "UNSPECIFIED": {
+      "graded": 1,
+      "successful": 1,
+      "task_success_rate": 1.0
+    },
+    "hidden_only_bug": {
+      "graded": 4,
+      "successful": 4,
+      "task_success_rate": 1.0
+    },
+    "behavior_preserving_refactor": {
+      "graded": 1,
+      "successful": 1,
+      "task_success_rate": 1.0
+    },
+    "public_visible_bug": {
+      "graded": 1,
+      "successful": 1,
+      "task_success_rate": 1.0
+    }
+  },
+  "tasks_without_declared_task_type": [
+    "RB-AS-001"
+  ]
+}

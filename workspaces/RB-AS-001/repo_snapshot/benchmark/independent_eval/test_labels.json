@@ -1,0 +1,219 @@
+{
+  "split": "test",
+  "total_cases": 34,
+  "safe_cases": 17,
+  "risky_cases": 17,
+  "zero_shot_patterns": [
+    "pattern_a_transmission",
+    "pattern_b_escalation",
+    "pattern_c_recon",
+    "pattern_d_bypass",
+    "pattern_e_export"
+  ],
+  "labels": [
+    {
+      "case_id": "IND-0001",
+      "true_label": "ALLOW",
+      "risk_score": 0.307,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0002",
+      "true_label": "ALLOW",
+      "risk_score": 0.238,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0003",
+      "true_label": "ALLOW",
+      "risk_score": 0.269,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0008",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.63,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0010",
+      "true_label": "ALLOW",
+      "risk_score": 0.323,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0016",
+      "true_label": "BLOCK",
+      "risk_score": 0.874,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0020",
+      "true_label": "ALLOW",
+      "risk_score": 0.022,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0021",
+      "true_label": "BLOCK",
+      "risk_score": 0.776,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0025",
+      "true_label": "BLOCK",
+      "risk_score": 0.941,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0028",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.666,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0030",
+      "true_label": "ALLOW",
+      "risk_score": 0.198,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0032",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.816,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0047",
+      "true_label": "ALLOW",
+      "risk_score": 0.169,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0048",
+      "true_label": "ALLOW",
+      "risk_score": 0.281,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0049",
+      "true_label": "ALLOW",
+      "risk_score": 0.268,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0053",
+      "true_label": "BLOCK",
+      "risk_score": 0.904,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0055",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.716,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0056",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.618,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0057",
+      "true_label": "ALLOW",
+      "risk_score": 0.341,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0058",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.66,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0061",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.671,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0064",
+      "true_label": "BLOCK",
+      "risk_score": 0.967,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0065",
+      "true_label": "ALLOW",
+      "risk_score": 0.327,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0066",
+      "true_label": "BLOCK",
+      "risk_score": 0.787,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0074",
+      "true_label": "ALLOW",
+      "risk_score": 0.027,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0075",
+      "true_label": "ALLOW",
+      "risk_score": 0.338,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0076",
+      "true_label": "ALLOW",
+      "risk_score": 0.316,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0077",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.663,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0083",
+      "true_label": "ALLOW",
+      "risk_score": 0.198,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0084",
+      "true_label": "HUMAN_REVIEW",
+      "risk_score": 0.706,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0085",
+      "true_label": "ALLOW",
+      "risk_score": 0.072,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0092",
+      "true_label": "BLOCK",
+      "risk_score": 0.96,
+      "is_risky": true
+    },
+    {
+      "case_id": "IND-0094",
+      "true_label": "ALLOW",
+      "risk_score": 0.335,
+      "is_risky": false
+    },
+    {
+      "case_id": "IND-0098",
+      "true_label": "BLOCK",
+      "risk_score": 0.84,
+      "is_risky": true
+    }
+  ]
+}

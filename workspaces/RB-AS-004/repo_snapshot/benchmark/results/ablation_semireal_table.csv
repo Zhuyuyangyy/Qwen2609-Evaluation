@@ -1,0 +1,8 @@
+dataset,method,action_accuracy,macro_f1,block_recall,false_allow,false_block,human_review,mae,runtime_ms
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,0  Full AgentShield,0.7667,0.7511,0.7500,0.0000,0.0000,0.2333,0.0873,0.0088
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,1  −stage boost,0.6333,0.5821,0.0833,0.0000,0.0000,0.6333,0.0780,0.0079
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,2  −category×chain boost,0.7667,0.7511,0.7500,0.0000,0.0000,0.2333,0.0873,0.0080
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,3  −external+sensitive boost,0.7667,0.7511,0.7500,0.0000,0.0000,0.2333,0.0873,0.0081
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,4  −audit/evasion boosts,0.7667,0.7511,0.7500,0.0000,0.0000,0.2333,0.0873,0.0080
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,5  −special-case rules,0.6333,0.5402,0.7500,0.0000,0.0000,0.1000,0.0967,0.0074
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,6  Local context (all chain),0.6667,0.6337,0.1667,0.0000,0.0000,0.6000,0.0753,0.0048

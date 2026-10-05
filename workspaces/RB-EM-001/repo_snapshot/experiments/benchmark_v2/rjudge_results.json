@@ -1,0 +1,166 @@
+{
+  "dataset": "R-Judge",
+  "n_records": 571,
+  "action_only": {
+    "plain": {
+      "baseline": "plain",
+      "n": 571,
+      "skipped": 0,
+      "accuracy": 0.473,
+      "unsafe_recall": 0.0,
+      "unsafe_precision": 0.0,
+      "unsafe_f1": 0.0,
+      "safe_recall": 1.0,
+      "safe_precision": 0.473,
+      "over_escalation_rate": 0.0,
+      "under_escalation_rate": 1.0,
+      "decision_distribution": {
+        "AUTO_EXECUTE": 571
+      },
+      "n_escalated_by_affect": 0,
+      "n_generalized_from_memory": 0
+    },
+    "risk": {
+      "baseline": "risk",
+      "n": 571,
+      "skipped": 0,
+      "accuracy": 0.347,
+      "unsafe_recall": 0.0,
+      "unsafe_precision": 0.0,
+      "unsafe_f1": 0.0,
+      "safe_recall": 0.733,
+      "safe_precision": 0.421,
+      "over_escalation_rate": 0.267,
+      "under_escalation_rate": 0.997,
+      "decision_distribution": {
+        "AUTO_EXECUTE": 470,
+        "SIMULATE_FIRST": 97,
+        "HUMAN_REVIEW": 4
+      },
+      "n_escalated_by_affect": 0,
+      "n_generalized_from_memory": 0
+    },
+    "memory": {
+      "baseline": "memory",
+      "n": 571,
+      "skipped": 0,
+      "accuracy": 0.298,
+      "unsafe_recall": 0.0,
+      "unsafe_precision": 0.0,
+      "unsafe_f1": 0.0,
+      "safe_recall": 0.63,
+      "safe_precision": 0.416,
+      "over_escalation_rate": 0.37,
+      "under_escalation_rate": 0.993,
+      "decision_distribution": {
+        "AUTO_EXECUTE": 409,
+        "SIMULATE_FIRST": 155,
+        "HUMAN_REVIEW": 7
+      },
+      "n_escalated_by_affect": 0,
+      "n_generalized_from_memory": 95
+    },
+    "full": {
+      "baseline": "full",
+      "n": 571,
+      "skipped": 0,
+      "accuracy": 0.275,
+      "unsafe_recall": 0.007,
+      "unsafe_precision": 0.286,
+      "unsafe_f1": 0.013,
+      "safe_recall": 0.574,
+      "safe_precision": 0.405,
+      "over_escalation_rate": 0.426,
+      "under_escalation_rate": 0.811,
+      "decision_distribution": {
+        "AUTO_EXECUTE": 383,
+        "SIMULATE_FIRST": 78,
+        "HUMAN_REVIEW": 103,
+        "BLOCK": 7
+      },
+      "n_escalated_by_affect": 136,
+      "n_generalized_from_memory": 112
+    }
+  },
+  "action_plus_context": {
+    "plain": {
+      "baseline": "plain",
+      "n": 571,
+      "skipped": 0,
+      "accuracy": 0.473,
+      "unsafe_recall": 0.0,
+      "unsafe_precision": 0.0,
+      "unsafe_f1": 0.0,
+      "safe_recall": 1.0,
+      "safe_precision": 0.473,
+      "over_escalation_rate": 0.0,
+      "under_escalation_rate": 1.0,
+      "decision_distribution": {
+        "AUTO_EXECUTE": 571
+      },
+      "n_escalated_by_affect": 0,
+      "n_generalized_from_memory": 0
+    },
+    "risk": {
+      "baseline": "risk",
+      "n": 571,
+      "skipped": 0,
+      "accuracy": 0.294,
+      "unsafe_recall": 0.0,
+      "unsafe_precision": 0.0,
+      "unsafe_f1": 0.0,
+      "safe_recall": 0.622,
+      "safe_precision": 0.396,
+      "over_escalation_rate": 0.378,
+      "under_escalation_rate": 0.98,
+      "decision_distribution": {
+        "AUTO_EXECUTE": 424,
+        "SIMULATE_FIRST": 137,
+        "HUMAN_REVIEW": 10
+      },
+      "n_escalated_by_affect": 0,
+      "n_generalized_from_memory": 0
+    },
+    "memory": {
+      "baseline": "memory",
+      "n": 571,
+      "skipped": 0,
+      "accuracy": 0.254,
+      "unsafe_recall": 0.0,
+      "unsafe_precision": 0.0,
+      "unsafe_f1": 0.0,
+      "safe_recall": 0.537,
+      "safe_precision": 0.402,
+      "over_escalation_rate": 0.463,
+      "under_escalation_rate": 0.97,
+      "decision_distribution": {
+        "AUTO_EXECUTE": 361,
+        "SIMULATE_FIRST": 195,
+        "HUMAN_REVIEW": 15
+      },
+      "n_escalated_by_affect": 0,
+      "n_generalized_from_memory": 86
+    },
+    "full": {
+      "baseline": "full",
+      "n": 571,
+      "skipped": 0,
+      "accuracy": 0.235,
+      "unsafe_recall": 0.03,
+      "unsafe_precision": 0.6,
+      "unsafe_f1": 0.057,
+      "safe_recall": 0.463,
+      "safe_precision": 0.38,
+      "over_escalation_rate": 0.537,
+      "under_escalation_rate": 0.777,
+      "decision_distribution": {
+        "AUTO_EXECUTE": 329,
+        "SIMULATE_FIRST": 124,
+        "HUMAN_REVIEW": 103,
+        "BLOCK": 15
+      },
+      "n_escalated_by_affect": 150,
+      "n_generalized_from_memory": 106
+    }
+  }
+}

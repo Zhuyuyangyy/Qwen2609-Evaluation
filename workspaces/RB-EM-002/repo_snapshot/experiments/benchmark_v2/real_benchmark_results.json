@@ -1,0 +1,351 @@
+{
+  "results_by_split": {
+    "train": {
+      "plain": {
+        "baseline": "plain",
+        "n": 210,
+        "accuracy": 0.062,
+        "macro_f1": 0.029,
+        "severity_mae": 1.205,
+        "risky_auto_exec_rate": 1.0,
+        "over_caution_rate": 0.0,
+        "decision_distribution": {
+          "AUTO_EXECUTE": 210
+        },
+        "n_escalated_by_affect": 0,
+        "n_de_escalated_by_affect": 0,
+        "n_generalized_from_memory": 0,
+        "confusion_matrix": [
+          [
+            13,
+            0,
+            0,
+            0
+          ],
+          [
+            152,
+            0,
+            0,
+            0
+          ],
+          [
+            34,
+            0,
+            0,
+            0
+          ],
+          [
+            11,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "risk": {
+        "baseline": "risk",
+        "n": 210,
+        "accuracy": 0.124,
+        "macro_f1": 0.07,
+        "severity_mae": 1.067,
+        "risky_auto_exec_rate": 0.753,
+        "over_caution_rate": 0.0,
+        "decision_distribution": {
+          "AUTO_EXECUTE": 182,
+          "HUMAN_REVIEW": 1,
+          "SIMULATE_FIRST": 27
+        },
+        "n_escalated_by_affect": 0,
+        "n_de_escalated_by_affect": 0,
+        "n_generalized_from_memory": 0,
+        "confusion_matrix": [
+          [
+            13,
+            0,
+            0,
+            0
+          ],
+          [
+            139,
+            13,
+            0,
+            0
+          ],
+          [
+            24,
+            10,
+            0,
+            0
+          ],
+          [
+            6,
+            4,
+            1,
+            0
+          ]
+        ]
+      },
+      "memory": {
+        "baseline": "memory",
+        "n": 210,
+        "accuracy": 0.262,
+        "macro_f1": 0.167,
+        "severity_mae": 0.89,
+        "risky_auto_exec_rate": 0.57,
+        "over_caution_rate": 0.0,
+        "decision_distribution": {
+          "AUTO_EXECUTE": 142,
+          "HUMAN_REVIEW": 18,
+          "SIMULATE_FIRST": 50
+        },
+        "n_escalated_by_affect": 0,
+        "n_de_escalated_by_affect": 0,
+        "n_generalized_from_memory": 163,
+        "confusion_matrix": [
+          [
+            13,
+            0,
+            0,
+            0
+          ],
+          [
+            103,
+            39,
+            10,
+            0
+          ],
+          [
+            20,
+            11,
+            3,
+            0
+          ],
+          [
+            6,
+            0,
+            5,
+            0
+          ]
+        ]
+      },
+      "full": {
+        "baseline": "full",
+        "n": 210,
+        "accuracy": 0.181,
+        "macro_f1": 0.224,
+        "severity_mae": 1.019,
+        "risky_auto_exec_rate": 0.538,
+        "over_caution_rate": 0.0,
+        "decision_distribution": {
+          "AUTO_EXECUTE": 133,
+          "BLOCK": 18,
+          "HUMAN_REVIEW": 50,
+          "SIMULATE_FIRST": 9
+        },
+        "n_escalated_by_affect": 77,
+        "n_de_escalated_by_affect": 0,
+        "n_generalized_from_memory": 163,
+        "confusion_matrix": [
+          [
+            13,
+            0,
+            0,
+            0
+          ],
+          [
+            94,
+            9,
+            39,
+            10
+          ],
+          [
+            20,
+            0,
+            11,
+            3
+          ],
+          [
+            6,
+            0,
+            0,
+            5
+          ]
+        ]
+      }
+    },
+    "test": {
+      "plain": {
+        "baseline": "plain",
+        "n": 90,
+        "accuracy": 0.056,
+        "macro_f1": 0.026,
+        "severity_mae": 1.211,
+        "risky_auto_exec_rate": 1.0,
+        "over_caution_rate": 0.0,
+        "decision_distribution": {
+          "AUTO_EXECUTE": 90
+        },
+        "n_escalated_by_affect": 0,
+        "n_de_escalated_by_affect": 0,
+        "n_generalized_from_memory": 0,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            65,
+            0,
+            0,
+            0
+          ],
+          [
+            16,
+            0,
+            0,
+            0
+          ],
+          [
+            4,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "risk": {
+        "baseline": "risk",
+        "n": 90,
+        "accuracy": 0.089,
+        "macro_f1": 0.05,
+        "severity_mae": 1.078,
+        "risky_auto_exec_rate": 0.703,
+        "over_caution_rate": 0.0,
+        "decision_distribution": {
+          "AUTO_EXECUTE": 79,
+          "SIMULATE_FIRST": 10,
+          "HUMAN_REVIEW": 1
+        },
+        "n_escalated_by_affect": 0,
+        "n_de_escalated_by_affect": 0,
+        "n_generalized_from_memory": 0,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            62,
+            3,
+            0,
+            0
+          ],
+          [
+            11,
+            5,
+            0,
+            0
+          ],
+          [
+            1,
+            2,
+            1,
+            0
+          ]
+        ]
+      },
+      "memory": {
+        "baseline": "memory",
+        "n": 90,
+        "accuracy": 0.222,
+        "macro_f1": 0.142,
+        "severity_mae": 0.911,
+        "risky_auto_exec_rate": 0.486,
+        "over_caution_rate": 0.0,
+        "decision_distribution": {
+          "AUTO_EXECUTE": 65,
+          "SIMULATE_FIRST": 19,
+          "HUMAN_REVIEW": 6
+        },
+        "n_escalated_by_affect": 0,
+        "n_de_escalated_by_affect": 0,
+        "n_generalized_from_memory": 73,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            49,
+            14,
+            2,
+            0
+          ],
+          [
+            10,
+            5,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            3,
+            0
+          ]
+        ]
+      },
+      "full": {
+        "baseline": "full",
+        "n": 90,
+        "accuracy": 0.189,
+        "macro_f1": 0.288,
+        "severity_mae": 0.967,
+        "risky_auto_exec_rate": 0.459,
+        "over_caution_rate": 0.0,
+        "decision_distribution": {
+          "AUTO_EXECUTE": 61,
+          "HUMAN_REVIEW": 19,
+          "BLOCK": 6,
+          "SIMULATE_FIRST": 4
+        },
+        "n_escalated_by_affect": 29,
+        "n_de_escalated_by_affect": 0,
+        "n_generalized_from_memory": 73,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            0,
+            0
+          ],
+          [
+            45,
+            4,
+            14,
+            2
+          ],
+          [
+            10,
+            0,
+            5,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  },
+  "guard_rejects_dummy": true
+}

@@ -1,0 +1,191 @@
+{
+  "experiment_name": "ablation_study",
+  "description": "Component ablation over the production engine configuration",
+  "results": [
+    {
+      "ablation_config": "full",
+      "engine_flags": {},
+      "baseline_name": "agentshield_production",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 260,
+      "accuracy": 0.4333,
+      "macro_precision": 0.4412,
+      "macro_recall": 0.4442,
+      "macro_f1": 0.4349,
+      "false_allow": 24,
+      "false_block": 8,
+      "review_rate": 0.46,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.3787,
+          "recall": 0.512,
+          "f1": 0.4354,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4094,
+          "recall": 0.438,
+          "f1": 0.4232,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.5355,
+          "recall": 0.3825,
+          "f1": 0.4462,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 64,
+          "HUMAN_REVIEW": 53,
+          "BLOCK": 8
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 81,
+          "HUMAN_REVIEW": 113,
+          "BLOCK": 64
+        },
+        "BLOCK": {
+          "ALLOW": 24,
+          "HUMAN_REVIEW": 110,
+          "BLOCK": 83
+        }
+      }
+    },
+    {
+      "ablation_config": "no_taint_tracking",
+      "engine_flags": {
+        "enable_taint_tracking": false
+      },
+      "baseline_name": "agentshield_production",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 260,
+      "accuracy": 0.4333,
+      "macro_precision": 0.4412,
+      "macro_recall": 0.4442,
+      "macro_f1": 0.4349,
+      "false_allow": 24,
+      "false_block": 8,
+      "review_rate": 0.46,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.3787,
+          "recall": 0.512,
+          "f1": 0.4354,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4094,
+          "recall": 0.438,
+          "f1": 0.4232,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.5355,
+          "recall": 0.3825,
+          "f1": 0.4462,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 64,
+          "HUMAN_REVIEW": 53,
+          "BLOCK": 8
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 81,
+          "HUMAN_REVIEW": 113,
+          "BLOCK": 64
+        },
+        "BLOCK": {
+          "ALLOW": 24,
+          "HUMAN_REVIEW": 110,
+          "BLOCK": 83
+        }
+      }
+    },
+    {
+      "ablation_config": "no_provenance",
+      "engine_flags": {
+        "enable_provenance": false
+      },
+      "baseline_name": "agentshield_production",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 261,
+      "accuracy": 0.435,
+      "macro_precision": 0.4531,
+      "macro_recall": 0.4418,
+      "macro_f1": 0.4298,
+      "false_allow": 24,
+      "false_block": 8,
+      "review_rate": 0.5117,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.3678,
+          "recall": 0.512,
+          "f1": 0.4281,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4202,
+          "recall": 0.5,
+          "f1": 0.4566,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.5714,
+          "recall": 0.3134,
+          "f1": 0.4048,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 64,
+          "HUMAN_REVIEW": 53,
+          "BLOCK": 8
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 86,
+          "HUMAN_REVIEW": 129,
+          "BLOCK": 43
+        },
+        "BLOCK": {
+          "ALLOW": 24,
+          "HUMAN_REVIEW": 125,
+          "BLOCK": 68
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total_items": 600,
+    "configs_tested": 3,
+    "deltas_vs_full": [
+      {
+        "config": "full",
+        "macro_f1": 0.4349,
+        "delta_vs_full": 0.0,
+        "block_recall_delta_vs_full": 0.0
+      },
+      {
+        "config": "no_taint_tracking",
+        "macro_f1": 0.4349,
+        "delta_vs_full": 0.0,
+        "block_recall_delta_vs_full": 0.0
+      },
+      {
+        "config": "no_provenance",
+        "macro_f1": 0.4298,
+        "delta_vs_full": -0.0051,
+        "block_recall_delta_vs_full": 0.0
+      }
+    ]
+  },
+  "timestamp": 1790137106.0777106
+}

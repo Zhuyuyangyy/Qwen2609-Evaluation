@@ -1,0 +1,39 @@
+{
+  "human_intervention_count": 0,
+  "execution_completed": true,
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "duration_seconds": 147.2,
+  "grade_completed": true,
+  "execution_error": null,
+  "environment_error": null,
+  "timed_out": false,
+  "constraint_violation": false,
+  "test_gaming_suspected": false,
+  "files_modified_count": 1,
+  "modified_paths": [
+    "repo_snapshot/backend/app/shield/agent_behavior_graph.py"
+  ],
+  "public_test_command": "pytest -q public_tests/test_public.py",
+  "test_command": "pytest -q",
+  "task_id": "RB-AS-003",
+  "repository": "AgentShield_V3",
+  "difficulty": "hard",
+  "task_type": "hidden_only_bug",
+  "grader_version": "1.0.0",
+  "grader_exit_code": 0,
+  "grader_invocation": "python RealRepoBench-Q2609/grader/score.py <isolated bundle>",
+  "isolation": {
+    "method": "hidden tests and grader executed on an isolated staging copy outside the frozen benchmark; outputs redirected to files; hidden results never surfaced to the agent session",
+    "frozen_benchmark_modified": false,
+    "grader_modified": false,
+    "workspace_snapshot_untouched": true
+  },
+  "notes": "update_node_risk() now marks the rewritten node dirty so _collect_dirty_nodes() includes it and its descendants, and the next compute_risk_propagation() recomputes that subgraph instead of returning the cached aggregate. The incremental cache itself is untouched: unchanged nodes still hit cache, _total_risk_cache / _topo_cache / _dirty_nodes all remain in place, and no path recomputes the whole graph. No public API, method signature or return structure changed; no test or grader file was touched.",
+  "run_status": "VALID_SUBMISSION",
+  "valid_model_submission": true,
+  "semantic_human_intervention_count": 0,
+  "manual_resume_count": null,
+  "harness_runtime_error_count": null,
+  "implementation_files_modified": 1
+}

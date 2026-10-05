@@ -1,0 +1,13 @@
+diff --git a/repo_snapshot/backend/app/shield/schemas.py b/repo_snapshot/backend/app/shield/schemas.py
+index 48a7b1a..82159ed 100644
+--- a/repo_snapshot/backend/app/shield/schemas.py
++++ b/repo_snapshot/backend/app/shield/schemas.py
+@@ -101,7 +101,7 @@ def event_from_dict(data: dict) -> ObservedToolEvent:
+     # leak a hidden value into everything downstream of the event. This is the
+     # exact class of leak that benchmark/leakage_invariance.py checks for.
+     safe.setdefault("event_id", data.get("id", data.get("case_id", "unknown")))
+-    safe.setdefault("session_id", data.get("session_id", data.get("chain_id", "default")))
++    safe.setdefault("session_id", data.get("session_id", "default"))
+     safe.setdefault("tool_name", data.get("tool_name", data.get("tool", "")))
+     safe.setdefault("tool_input", data.get("tool_input", data.get("params", data.get("input", {}))))
+     safe.setdefault("agent_id", data.get("agent_id", data.get("agent", "unknown")))

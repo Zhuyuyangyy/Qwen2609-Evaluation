@@ -1,0 +1,50 @@
+$ pwd
+/d/ZYY Project/Qwen2609-Evaluation/workspaces/RB-EM-004
+
+$ git status --short
+ M repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py
+?? public_tests/__pycache__/
+?? repo_snapshot/emotion_agent/__pycache__/
+?? repo_snapshot/experiments/adaptive_v10/__pycache__/
+?? repo_snapshot/experiments/benchmark_v4_same_dialogue/__pycache__/
+?? repo_snapshot/experiments/rjudge_v2/__pycache__/
+?? repo_snapshot/risk_encoder_v2/__pycache__/
+?? repo_snapshot/tests/__pycache__/
+
+$ git diff --stat
+warning: in the working copy of 'repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py', LF will be replaced by CRLF the next time Git touches it
+ repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ python -m pytest -q public_tests/
+D:\python µ—È\Lib\site-packages\pytest_asyncio\plugin.py:299: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the "fixture" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+.....                                                                    [100%]
+5 passed in 0.99s
+
+[exit code: 0]
+[isolation] staging dir: D:\ZYY Project\Qwen2609-Evaluation\evaluation_runs\RB-EM-004\_staging
+[isolation] public_tests.log:
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+.....                                                                    [100%]
+5 passed in 0.91s
+
+[isolation] hidden_tests.log (run outside session, no scores read back):
+  log lines: 5
+
+[isolation] regression_tests.log tail:
+=========================== short test summary info ===========================
+FAILED repo_snapshot/tests/test_adaptive_v10.py::TestSystemComparability::test_all_systems_run_an_episode
+1 failed, 424 passed in 10.54s
+
+[isolation] frozen_check.json:
+cat: frozen_check.json: No such file or directory
+
+
+[isolated grader run] executed outside this session, outputs redirected to files
+COMMAND: python /d/ZYY Project/RealRepoBench-Q2609/grader/score.py <isolated staging bundle>
+grader_exit_code: 0
+hidden test results: NOT surfaced into the agent session (per instruction 7).
+artifact: grade.json (derived from the grader's own score output).

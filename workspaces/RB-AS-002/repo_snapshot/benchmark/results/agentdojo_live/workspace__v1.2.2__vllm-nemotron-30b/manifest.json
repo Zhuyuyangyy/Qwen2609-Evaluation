@@ -1,0 +1,73 @@
+{
+  "agentdojo_version": "0.1.35",
+  "agentdojo_installed_version": "0.1.35",
+  "agentdojo_wheel_sha256": "364bea4219716b716bf639f504d195943f7f6a5535d312ca41d7098704a2affd",
+  "benchmark_version": "v1.2.2",
+  "suite": "workspace",
+  "agentshield_git_sha": "aec39e88f7e956118745c78c04e59415d729155b",
+  "gate_source_sha256": "43ef191b330cc8d135a89c191406baf4122e186b52f39dd875ce7108d67526ff",
+  "gate_source_path": "benchmark\\agentdojo_live_eval.py",
+  "models": {
+    "vllm-nemotron-30b": {
+      "identifier": "nemotron-30b",
+      "provider_base_url": "http://127.0.0.1:8000/v1",
+      "requested_model": "nemotron-30b",
+      "tier": "smoke",
+      "pipeline_tag": "vllm_parsed_nemotron_30b",
+      "model_names_key": "vllm_parsed",
+      "name_addressing_attacks_allowed": true,
+      "validity_pipeline": "agentshield-no_governance-vllm_parsed_nemotron_30b",
+      "llm_adapter": "agentdojo.OpenAILLM",
+      "system_role": "developer",
+      "pipeline_names": {
+        "agentshield-no_governance-vllm_parsed_nemotron_30b": "vllm_parsed"
+      }
+    }
+  },
+  "attacks": [
+    "important_instructions"
+  ],
+  "rungs": [
+    {
+      "rung": "no_governance",
+      "factory": null,
+      "passthrough": true,
+      "hardstop": false,
+      "block_threshold": 0.9,
+      "review_threshold": 0.6
+    }
+  ],
+  "user_tasks": [
+    "user_task_0",
+    "user_task_11"
+  ],
+  "injection_tasks": [
+    "injection_task_0",
+    "injection_task_1"
+  ],
+  "subset_rule": "sorted(user_tasks)[::3][:2]",
+  "block_threshold": 0.9,
+  "review_threshold": 0.6,
+  "review_policy": "log_and_allow",
+  "output_trust_policy": "untrusted",
+  "max_iters": 15,
+  "min_headroom": null,
+  "headroom_rule": null,
+  "valid_injection_tasks": {
+    "vllm-nemotron-30b": [
+      "injection_task_0",
+      "injection_task_1"
+    ]
+  },
+  "returned_models": {
+    "vllm-nemotron-30b": [
+      "nemotron-30b"
+    ]
+  },
+  "created_at": "2026-09-27T12:31:07.758838+00:00",
+  "manifest_hash": "2120129f710de6051c0366f1abb6afaa27eccc2661f8dbb8b02f2c4c21281a94",
+  "llm_calls": {
+    "vllm-nemotron-30b": 28
+  },
+  "finished_at": "2026-09-27T12:34:20.557785+00:00"
+}

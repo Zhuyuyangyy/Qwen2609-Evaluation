@@ -1,0 +1,81 @@
+{
+  "experiment_name": "latency_benchmark",
+  "description": "Latency benchmark: p50/p95/p99 over 1000 iterations",
+  "results": [
+    {
+      "baseline_name": "tool_name_rules",
+      "iterations": 1000,
+      "mean_ms": 0.0007,
+      "p50_ms": 0.0007,
+      "p95_ms": 0.0009,
+      "p99_ms": 0.0012,
+      "min_ms": 0.0006,
+      "max_ms": 0.0055
+    },
+    {
+      "baseline_name": "content_keywords",
+      "iterations": 1000,
+      "mean_ms": 0.0052,
+      "p50_ms": 0.0051,
+      "p95_ms": 0.0053,
+      "p99_ms": 0.006,
+      "min_ms": 0.0049,
+      "max_ms": 0.0406
+    },
+    {
+      "baseline_name": "local_context",
+      "iterations": 1000,
+      "mean_ms": 0.0022,
+      "p50_ms": 0.0021,
+      "p95_ms": 0.0022,
+      "p99_ms": 0.0023,
+      "min_ms": 0.002,
+      "max_ms": 0.0142
+    },
+    {
+      "baseline_name": "llm_as_judge",
+      "iterations": 1000,
+      "mean_ms": 0.0062,
+      "p50_ms": 0.0061,
+      "p95_ms": 0.0064,
+      "p99_ms": 0.0093,
+      "min_ms": 0.0059,
+      "max_ms": 0.0216
+    },
+    {
+      "baseline_name": "agentshield_no_graph",
+      "iterations": 1000,
+      "mean_ms": 0.004,
+      "p50_ms": 0.0039,
+      "p95_ms": 0.0041,
+      "p99_ms": 0.0045,
+      "min_ms": 0.0038,
+      "max_ms": 0.0396
+    },
+    {
+      "baseline_name": "agentshield_graph_only",
+      "iterations": 1000,
+      "mean_ms": 0.0007,
+      "p50_ms": 0.0007,
+      "p95_ms": 0.0008,
+      "p99_ms": 0.0009,
+      "min_ms": 0.0006,
+      "max_ms": 0.0042
+    },
+    {
+      "baseline_name": "agentshield_production",
+      "iterations": 1000,
+      "mean_ms": 0.1328,
+      "p50_ms": 0.127,
+      "p95_ms": 0.181,
+      "p99_ms": 0.2584,
+      "min_ms": 0.1017,
+      "max_ms": 0.6076
+    }
+  ],
+  "summary": {
+    "iterations": 1000,
+    "sub_millisecond_baselines": 7
+  },
+  "timestamp": 1790137108.564225
+}

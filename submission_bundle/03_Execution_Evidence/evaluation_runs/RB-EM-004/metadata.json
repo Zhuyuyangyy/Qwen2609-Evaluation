@@ -1,0 +1,45 @@
+{
+  "human_intervention_count": 0,
+  "execution_completed": true,
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "task_id": "RB-EM-004",
+  "repository": "emotion-like-functional-modulation-main",
+  "category": "instrumentation",
+  "difficulty": "medium",
+  "files_modified_count": 1,
+  "modified_paths": [
+    "repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py"
+  ],
+  "public_test_command": "pytest -q public_tests/test_public.py",
+  "test_command": "pytest -q",
+  "time_budget_seconds": 1200,
+  "constraint_compliance": {
+    "behaviour_preserving": true,
+    "tests_unmodified": true,
+    "outputs_not_deleted": true,
+    "no_policy_or_system_code_touched": true,
+    "seeds_and_environment_unchanged": true,
+    "cost_constants_unchanged": true,
+    "no_trivial_balancing_workaround": true
+  },
+  "frozen_protocol": "docs/design/phase6_v10_adaptive_environment.md §6.10",
+  "fix_summary": "Per-step delta_J_vs_stateless was computed against a hardcoded 0.0, which discarded the replayed paired counterfactual and made the attribution buckets degenerate into the subject's own step cost. Restored the frozen protocol formula delta_J_vs_stateless = J_subject - J_stateless so each step's reference cost comes from run_reference()'s stateless replay, and the attribution rows again sum to the measured net gap (§6.10.6.4).",
+  "grader_version": "1.0.0",
+  "grader_invocation": "python RealRepoBench-Q2609/grader/score.py <isolated run bundle dir>",
+  "isolation": {
+    "method": "workspace copied to an isolated staging directory outside the Qoder session; hidden tests and score.py executed there; all test/metric output redirected to files; hidden grader results never surfaced into the agent session",
+    "frozen_benchmark_modified": false,
+    "grader_modified": false,
+    "staging_dir": "evaluation_runs\\RB-EM-004\\_staging",
+    "hidden_results_surfaced_to_session": false
+  },
+  "notes": "Instruction named RB-AS-001, but the active workspace and repository are RB-EM-004 (emotion-like-functional-modulation-main, AgentShield_V3 aside). evaluation_runs/RB-AS-001/ already holds a complete, unrelated run for RB-AS-001, so overwriting it would destroy existing evidence. Archived under evaluation_runs/RB-EM-004/ instead, with both patch.diff and grade.json keyed by task_id RB-EM-004.",
+  "run_status": "VALID_SUBMISSION",
+  "valid_model_submission": true,
+  "grade_completed": true,
+  "semantic_human_intervention_count": 0,
+  "manual_resume_count": null,
+  "harness_runtime_error_count": null,
+  "implementation_files_modified": 1
+}

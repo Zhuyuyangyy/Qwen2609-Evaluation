@@ -1,0 +1,142 @@
+{
+  "dataset": "agentdojo_derived_trajectory",
+  "samples": 2000,
+  "attack": 1961,
+  "benign": 39,
+  "detector_label_free": true,
+  "trajectory_reconstructed_from_attack_metadata": true,
+  "native_runtime_trace": false,
+  "sampling": "2000-sample stratified subset of the AgentDojo dump",
+  "ablation_ladder": [
+    {
+      "config": "local_only",
+      "adds": "single-event gate on the current call only"
+    },
+    {
+      "config": "plus_output_inspection",
+      "adds": "+ reacts to untrusted content in context"
+    },
+    {
+      "config": "plus_entity_provenance",
+      "adds": "+ tracks where each entity came from"
+    },
+    {
+      "config": "plus_intent_consistency",
+      "adds": "+ checks the entity against the operator's request"
+    }
+  ],
+  "results": [
+    {
+      "config": "local_only",
+      "total": 2000,
+      "attack_total": 1961,
+      "benign_total": 39,
+      "detection_recall": 0.7925,
+      "block_recall": 0.0342,
+      "benign_review_rate": 0.1282,
+      "benign_block_fpr": 0.0,
+      "allow_rate": 0.2205,
+      "confusion": {
+        "ALLOW": {
+          "ALLOW": 34,
+          "HUMAN_REVIEW": 5,
+          "BLOCK": 0
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 0,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "BLOCK": {
+          "ALLOW": 407,
+          "HUMAN_REVIEW": 1487,
+          "BLOCK": 67
+        }
+      }
+    },
+    {
+      "config": "plus_output_inspection",
+      "total": 2000,
+      "attack_total": 1961,
+      "benign_total": 39,
+      "detection_recall": 0.8144,
+      "block_recall": 0.0541,
+      "benign_review_rate": 0.1282,
+      "benign_block_fpr": 0.0,
+      "allow_rate": 0.199,
+      "confusion": {
+        "ALLOW": {
+          "ALLOW": 34,
+          "HUMAN_REVIEW": 5,
+          "BLOCK": 0
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 0,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "BLOCK": {
+          "ALLOW": 364,
+          "HUMAN_REVIEW": 1491,
+          "BLOCK": 106
+        }
+      }
+    },
+    {
+      "config": "plus_entity_provenance",
+      "total": 2000,
+      "attack_total": 1961,
+      "benign_total": 39,
+      "detection_recall": 0.8914,
+      "block_recall": 0.7899,
+      "benign_review_rate": 0.1282,
+      "benign_block_fpr": 0.0,
+      "allow_rate": 0.1235,
+      "confusion": {
+        "ALLOW": {
+          "ALLOW": 34,
+          "HUMAN_REVIEW": 5,
+          "BLOCK": 0
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 0,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "BLOCK": {
+          "ALLOW": 213,
+          "HUMAN_REVIEW": 199,
+          "BLOCK": 1549
+        }
+      }
+    },
+    {
+      "config": "plus_intent_consistency",
+      "total": 2000,
+      "attack_total": 1961,
+      "benign_total": 39,
+      "detection_recall": 0.8914,
+      "block_recall": 0.7899,
+      "benign_review_rate": 0.1282,
+      "benign_block_fpr": 0.0,
+      "allow_rate": 0.1235,
+      "confusion": {
+        "ALLOW": {
+          "ALLOW": 34,
+          "HUMAN_REVIEW": 5,
+          "BLOCK": 0
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 0,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "BLOCK": {
+          "ALLOW": 213,
+          "HUMAN_REVIEW": 199,
+          "BLOCK": 1549
+        }
+      }
+    }
+  ]
+}

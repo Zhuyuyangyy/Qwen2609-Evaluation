@@ -1,0 +1,64 @@
+{
+  "dataset": "agentdojo_native_trace_replay",
+  "recorded_steps_total": 13913,
+  "benign_tasks": 97,
+  "attack_tasks": 949,
+  "benign_steps": 339,
+  "attack_steps": 13574,
+  "detector_label_free": true,
+  "trajectory_reconstructed": false,
+  "native_runtime_trace": true,
+  "note": "Replays recorded (tool_call, tool_response) pairs from the AgentDojo dump. injection_goal / label / attack_name are not given to the engine; labels split the results only. Utility not measured.",
+  "ladder": [
+    {
+      "config": "local_only",
+      "adds": "single-event gate on the current call only"
+    },
+    {
+      "config": "plus_output_inspection",
+      "adds": "+ reacts to instruction-like content in context"
+    },
+    {
+      "config": "plus_entity_provenance",
+      "adds": "+ tracks where each entity came from"
+    },
+    {
+      "config": "plus_intent_consistency",
+      "adds": "+ checks the entity against the operator's request"
+    }
+  ],
+  "results": [
+    {
+      "config": "local_only",
+      "benign_steps": 339,
+      "benign_block_rate": 0.0029,
+      "benign_review_rate": 0.118,
+      "attack_steps": 13574,
+      "attack_flag_rate": 0.034
+    },
+    {
+      "config": "plus_output_inspection",
+      "benign_steps": 339,
+      "benign_block_rate": 0.0029,
+      "benign_review_rate": 0.118,
+      "attack_steps": 13574,
+      "attack_flag_rate": 1.0
+    },
+    {
+      "config": "plus_entity_provenance",
+      "benign_steps": 339,
+      "benign_block_rate": 0.0029,
+      "benign_review_rate": 0.118,
+      "attack_steps": 13574,
+      "attack_flag_rate": 1.0
+    },
+    {
+      "config": "plus_intent_consistency",
+      "benign_steps": 339,
+      "benign_block_rate": 0.0029,
+      "benign_review_rate": 0.118,
+      "attack_steps": 13574,
+      "attack_flag_rate": 1.0
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "task_id": "RB-AS-002",
+  "scores": {
+    "functional_correctness": 60,
+    "hidden_tests": 20,
+    "constraint_compliance": 10,
+    "no_regression": 10,
+    "total": 100
+  },
+  "task_success": true,
+  "baseline_relative": {
+    "target_fix_pass": true,
+    "regression_pass": true,
+    "new_failures": [],
+    "surviving_target_failures": []
+  },
+  "reasons": [],
+  "violations": []
+}

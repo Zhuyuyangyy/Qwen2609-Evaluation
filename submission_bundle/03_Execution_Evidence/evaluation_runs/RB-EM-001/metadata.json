@@ -1,0 +1,47 @@
+{
+  "task_id": "RB-EM-001",
+  "repository": "emotion-like-functional-modulation-main",
+  "difficulty": "medium",
+  "human_intervention_count": 0,
+  "execution_completed": true,
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "duration_seconds": null,
+  "grade_completed": true,
+  "execution_error": null,
+  "environment_error": null,
+  "timed_out": false,
+  "constraint_violation": false,
+  "test_gaming_suspected": false,
+  "frozen_file_violations": 0,
+  "files_modified_count": 1,
+  "modified_paths": [
+    "repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py"
+  ],
+  "public_test_command": "pytest -q public_tests/test_public.py",
+  "test_command": "pytest -q",
+  "public_test_result": "5 passed in 1.20s",
+  "regression_test_result": "1 failed, 417 passed in 10.94s (pre-existing baseline failure only)",
+  "pre_existing_failures": [
+    "tests/test_adaptive_v10.py::TestSystemComparability::test_all_systems_run_an_episode"
+  ],
+  "frozen_files_checked": 22,
+  "frozen_files_intact": 22,
+  "grader_version": null,
+  "grader_exit_code": null,
+  "grader_invocation": "external private grader (run outside this session; result never surfaced here)",
+  "isolation": {
+    "method": "hidden tests and the private grader are executed by the external orchestrator; outputs are not redirected into this session and no hidden grader result is surfaced to the agent session",
+    "frozen_benchmark_modified": false,
+    "grader_modified": false,
+    "workspace_snapshot_untouched": true
+  },
+  "scope_note": "Instructions named RB-AS-001; the workspace bound to this session is RB-EM-001. Confirmed with the caller (decision dec-b7e46b6b17901fc1): this run archives RB-EM-001. workspaces/RB-AS-001 and its existing evaluation_runs/RB-AS-001 artifacts were left untouched.",
+  "notes": "One-line propagation fix: run_one() constructs AdaptiveEnvironment with the logical seed argument instead of a hardcoded 0. CLI semantics, the recorded metadata keys (seed/system/r_base_mode/feedback), the reported keys and the public API are unchanged. No random value was pinned and no test was touched.",
+  "run_status": "VALID_SUBMISSION",
+  "valid_model_submission": true,
+  "semantic_human_intervention_count": 0,
+  "manual_resume_count": 0,
+  "harness_runtime_error_count": 0,
+  "implementation_files_modified": 1
+}

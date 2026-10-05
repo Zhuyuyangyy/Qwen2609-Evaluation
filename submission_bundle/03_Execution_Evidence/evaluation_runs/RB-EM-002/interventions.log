@@ -1,0 +1,8 @@
+interventions: 0
+human_intervention_count: 0
+
+No manual edits were made to the workspace by this session. The fix in
+repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py was produced and
+verified entirely inside the Qoder run. The hidden grader was invoked only from an
+isolated staging copy, and its results were redirected to files and never surfaced
+back into this session.

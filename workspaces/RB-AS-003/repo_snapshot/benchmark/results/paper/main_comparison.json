@@ -1,0 +1,367 @@
+{
+  "experiment_name": "main_comparison",
+  "description": "AgentShield production pipeline vs all baselines on held-out test set",
+  "results": [
+    {
+      "baseline_name": "tool_name_rules",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 175,
+      "accuracy": 0.2917,
+      "macro_precision": 0.3418,
+      "macro_recall": 0.3464,
+      "macro_f1": 0.2815,
+      "false_allow": 134,
+      "false_block": 12,
+      "review_rate": 0.2417,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.2198,
+          "recall": 0.656,
+          "f1": 0.3293,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4276,
+          "recall": 0.2403,
+          "f1": 0.3077,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.378,
+          "recall": 0.1429,
+          "f1": 0.2074,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 82,
+          "HUMAN_REVIEW": 31,
+          "BLOCK": 12
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 157,
+          "HUMAN_REVIEW": 62,
+          "BLOCK": 39
+        },
+        "BLOCK": {
+          "ALLOW": 134,
+          "HUMAN_REVIEW": 52,
+          "BLOCK": 31
+        }
+      }
+    },
+    {
+      "baseline_name": "content_keywords",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 294,
+      "accuracy": 0.49,
+      "macro_precision": 0.5296,
+      "macro_recall": 0.5025,
+      "macro_f1": 0.487,
+      "false_allow": 111,
+      "false_block": 9,
+      "review_rate": 0.2967,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.2727,
+          "recall": 0.576,
+          "f1": 0.3702,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.7022,
+          "recall": 0.4845,
+          "f1": 0.5734,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.6139,
+          "recall": 0.447,
+          "f1": 0.5173,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 72,
+          "HUMAN_REVIEW": 44,
+          "BLOCK": 9
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 81,
+          "HUMAN_REVIEW": 125,
+          "BLOCK": 52
+        },
+        "BLOCK": {
+          "ALLOW": 111,
+          "HUMAN_REVIEW": 9,
+          "BLOCK": 97
+        }
+      }
+    },
+    {
+      "baseline_name": "local_context",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 179,
+      "accuracy": 0.2983,
+      "macro_precision": 0.2262,
+      "macro_recall": 0.355,
+      "macro_f1": 0.2442,
+      "false_allow": 146,
+      "false_block": 0,
+      "review_rate": 0.325,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.2222,
+          "recall": 0.72,
+          "f1": 0.3396,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4564,
+          "recall": 0.345,
+          "f1": 0.3929,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 90,
+          "HUMAN_REVIEW": 35,
+          "BLOCK": 0
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 169,
+          "HUMAN_REVIEW": 89,
+          "BLOCK": 0
+        },
+        "BLOCK": {
+          "ALLOW": 146,
+          "HUMAN_REVIEW": 71,
+          "BLOCK": 0
+        }
+      }
+    },
+    {
+      "baseline_name": "llm_as_judge",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 151,
+      "accuracy": 0.2517,
+      "macro_precision": 0.1818,
+      "macro_recall": 0.3669,
+      "macro_f1": 0.1808,
+      "false_allow": 157,
+      "false_block": 0,
+      "review_rate": 0.1433,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.2432,
+          "recall": 1.0,
+          "f1": 0.3912,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.3023,
+          "recall": 0.1008,
+          "f1": 0.1512,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 125,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 232,
+          "HUMAN_REVIEW": 26,
+          "BLOCK": 0
+        },
+        "BLOCK": {
+          "ALLOW": 157,
+          "HUMAN_REVIEW": 60,
+          "BLOCK": 0
+        }
+      }
+    },
+    {
+      "baseline_name": "agentshield_no_graph",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 125,
+      "accuracy": 0.2083,
+      "macro_precision": 0.0736,
+      "macro_recall": 0.3333,
+      "macro_f1": 0.1206,
+      "false_allow": 183,
+      "false_block": 0,
+      "review_rate": 0.0567,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.2208,
+          "recall": 1.0,
+          "f1": 0.3618,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 125,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 258,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "BLOCK": {
+          "ALLOW": 183,
+          "HUMAN_REVIEW": 34,
+          "BLOCK": 0
+        }
+      }
+    },
+    {
+      "baseline_name": "agentshield_graph_only",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 125,
+      "accuracy": 0.2083,
+      "macro_precision": 0.0694,
+      "macro_recall": 0.3333,
+      "macro_f1": 0.1149,
+      "false_allow": 217,
+      "false_block": 0,
+      "review_rate": 0.0,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.2083,
+          "recall": 1.0,
+          "f1": 0.3448,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 125,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 258,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        },
+        "BLOCK": {
+          "ALLOW": 217,
+          "HUMAN_REVIEW": 0,
+          "BLOCK": 0
+        }
+      }
+    },
+    {
+      "baseline_name": "agentshield_production",
+      "dataset_name": "test_cases_sci_600",
+      "total": 600,
+      "correct": 260,
+      "accuracy": 0.4333,
+      "macro_precision": 0.4412,
+      "macro_recall": 0.4442,
+      "macro_f1": 0.4349,
+      "false_allow": 24,
+      "false_block": 8,
+      "review_rate": 0.46,
+      "per_label_metrics": {
+        "ALLOW": {
+          "precision": 0.3787,
+          "recall": 0.512,
+          "f1": 0.4354,
+          "support": 125
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4094,
+          "recall": 0.438,
+          "f1": 0.4232,
+          "support": 258
+        },
+        "BLOCK": {
+          "precision": 0.5355,
+          "recall": 0.3825,
+          "f1": 0.4462,
+          "support": 217
+        }
+      },
+      "confusion_matrix": {
+        "ALLOW": {
+          "ALLOW": 64,
+          "HUMAN_REVIEW": 53,
+          "BLOCK": 8
+        },
+        "HUMAN_REVIEW": {
+          "ALLOW": 81,
+          "HUMAN_REVIEW": 113,
+          "BLOCK": 64
+        },
+        "BLOCK": {
+          "ALLOW": 24,
+          "HUMAN_REVIEW": 110,
+          "BLOCK": 83
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total_items": 600,
+    "baselines_evaluated": 7,
+    "best_baseline": "content_keywords",
+    "best_baseline_f1": 0.487,
+    "agentshield_macro_f1": 0.4349,
+    "agentshield_action_accuracy": 0.4333,
+    "best_excluding_ours": "content_keywords",
+    "relative_improvement_over_local_context": 0.7809
+  },
+  "timestamp": 1790137104.3770967
+}

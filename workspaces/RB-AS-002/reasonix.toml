@@ -1,0 +1,5 @@
+[permissions]
+allow = []
+
+[sandbox]
+allow_write = ["D:\\ZYY Project\\Qwen2609-Evaluation\\evaluation_runs\\RB-AS-002"]

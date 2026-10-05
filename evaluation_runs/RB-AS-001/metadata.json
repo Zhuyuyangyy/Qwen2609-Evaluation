@@ -1,0 +1,33 @@
+{
+  "human_intervention_count": 0,
+  "execution_completed": true,
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "duration_seconds": 0.943,
+  "grade_completed": true,
+  "execution_error": null,
+  "environment_error": null,
+  "timed_out": false,
+  "constraint_violation": false,
+  "test_gaming_suspected": false,
+  "files_modified_count": 1,
+  "public_test_command": "pytest -q public_tests/test_public.py",
+  "test_command": "pytest -q",
+  "task_id": "RB-AS-001",
+  "repository": "AgentShield_V3",
+  "grader_version": "1.0.0",
+  "grader_exit_code": 0,
+  "grader_invocation": "python RealRepoBench-Q2609/grader/score.py <isolated bundle>",
+  "isolation": {
+    "method": "hidden tests and grader executed on an isolated staging copy outside the frozen benchmark; outputs redirected to files; hidden results never surfaced to the agent session",
+    "frozen_benchmark_modified": false,
+    "grader_modified": false
+  },
+  "notes": "Single-line fix in repo_snapshot/backend/app/shield/schemas.py: session_id no longer falls back to the evaluation-only chain_id. Output schema, public API, CLI and the existing suite are unchanged.",
+  "run_status": "VALID_SUBMISSION",
+  "valid_model_submission": true,
+  "semantic_human_intervention_count": 0,
+  "manual_resume_count": null,
+  "harness_runtime_error_count": null,
+  "implementation_files_modified": 1
+}

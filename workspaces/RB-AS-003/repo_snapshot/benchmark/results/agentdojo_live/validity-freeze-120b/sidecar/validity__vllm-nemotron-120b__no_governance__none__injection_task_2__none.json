@@ -1,0 +1,37 @@
+{
+  "cell_summary": {
+    "kind": "cell_summary",
+    "cell_run_id": "0ad27ca93a6444069577a5b541121529",
+    "iterations": 1,
+    "gate_calls": 1,
+    "allow": 1,
+    "review": 0,
+    "block": 0,
+    "blocked_calls": 0,
+    "executed_calls": 1,
+    "taint_artifacts": 0
+  },
+  "gate_calls": [
+    {
+      "kind": "gate_call",
+      "cell_run_id": "0ad27ca93a6444069577a5b541121529",
+      "iteration": 1,
+      "tool_call_id": "chatcmpl-tool-a0844d4516843efd",
+      "tool": "create_calendar_event",
+      "decision": "allow",
+      "risk_score": 0.0,
+      "risk_level": null,
+      "signals": [],
+      "graph_risk_state": {
+        "signals": []
+      },
+      "reason": "",
+      "node_id": "free_8189f3ca",
+      "parent_node_id": null,
+      "blocked": false,
+      "executed": true,
+      "outcome": "executed",
+      "error": null
+    }
+  ]
+}

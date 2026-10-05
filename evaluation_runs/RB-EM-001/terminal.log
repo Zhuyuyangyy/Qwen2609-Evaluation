@@ -1,0 +1,108 @@
+Qoder terminal trace — RB-EM-001 (RealRepoBench-Q2609 v0.1)
+==========================================================
+
+model:    qwen-latest-series-invite-2609
+harness:  Qoder
+task:     RB-EM-001  (repository: emotion-like-functional-modulation-main, difficulty: medium)
+baseline: 2caa075 "RealRepoBench frozen baseline" (branch master)
+python:   3.12.10  (D:\python实验\python.exe)   pytest: 8.x
+scope:    archive the workspace actually bound to this session, workspaces/RB-EM-001
+
+Note
+----
+Each block below is a command this session actually ran, in order, with the
+human-visible part of its result. No hidden-test content and no private grader
+output was ever printed to this session.
+
+------------------------------------------------------------ 1. Orientation
+$ cd workspaces/RB-EM-001 && cat prompt.md && git status
+Task: "A seed configuration is not propagated to the experiment runner, so
+repeated experiments all run with the same seed. Fix the propagation"
+Constraints: 不得修改测试 / 不得固定随机数以迎合结果
+        modified:   repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py
+$ git --no-pager log --oneline -20
+2caa075 RealRepoBench frozen baseline
+
+------------------------------------------------------------ 2. Public checks (what must NOT change)
+$ python -m pytest -q public_tests/test_public.py
+.....                                                                    [100%]
+5 passed in 1.20s
+
+The public suite deliberately passes on the defective snapshot. It pins:
+  * run_one signature still takes seed in position 4
+  * metrics["seed"] reports the logical seed it was asked to run
+  * metadata keys {seed, system, r_base_mode, feedback} unchanged
+  * load_pool / aggregate still importable and callable
+
+------------------------------------------------------------ 3. Localisation
+$ grep -n "seed" repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py
+54:  def run_one(system_name, r_base_mode, feedback, seed, pool) -> dict:
+57:      env = AdaptiveEnvironment(pool, r_base_mode=r_base_mode, feedback=feedback, seed=seed)
+73:      metrics["seed"] = seed                     # metadata: the LOGICAL seed
+121: parser.add_argument("--seeds", type=int, default=30)
+122: parser.add_argument("--seed-start", type=int, default=0)
+149:      seed = args.seed_start + i
+150:      r = run_one(sysname, rb, fb, seed, pool)
+
+The CLI loop (148-150) derives a distinct logical seed per episode and passes it
+into run_one; run_one records it faithfully into the per-run metadata (73). Both
+ends of the chain look correct, which is exactly the reported symptom: recorded
+per-run metadata is right while execution is not.
+
+The break is at the one hop in between: the environment is constructed with a
+hardcoded literal instead of the parameter.
+
+------------------------------------------------------------ 4. The fix
+- repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py
+  -    env = AdaptiveEnvironment(pool, r_base_mode=r_base_mode, feedback=feedback, seed=0)
+  +    env = AdaptiveEnvironment(pool, r_base_mode=r_base_mode, feedback=feedback,
+  +                              seed=seed)
+
+Reversing the defect (defect.json declares this exact one-line substitution).
+No random value is pinned, no test is touched, no CLI flag changes, no reported
+key changes, no metadata field changes. The logical seed now drives environment
+construction, so per-seed episodes are genuinely independent and the cross-seed
+spread / paired bootstrap CIs are computed over distinct executions instead of N
+replays of one.
+
+------------------------------------------------------------ 5. Local verification
+$ python -m pytest -q public_tests/test_public.py
+.....                                                                    [100%]
+5 passed in 1.20s
+
+Regression (repository suite, the task's own test command `pytest -q`):
+1 failed, 417 passed in 10.94s
+FAILED repo_snapshot/tests/test_adaptive_v10.py::TestSystemComparability::test_all_systems_run_an_episode
+       AttributeError: 'EwmaAppraisalSystem' object has no attribute 'hazard_hat'
+
+That failure is the repository's OWN pre-existing breakage, listed in
+tasks/RB-EM-001/baseline_failures.json under
+known_preexisting_failures. It is upstream-complete in
+adaptive_systems.py:634, unrelated to seed propagation, and was failing before
+this session touched anything. Per the grader's semantics it may remain and is
+not counted against the submission.
+
+Frozen-file integrity vs tasks/RB-EM-001/checksums.sha256:
+22 files checked, 22 intact, 0 DIFF, 0 MISS
+(all of tests/** and setup.py; the single edited file
+ experiments/adaptive_v10/run_adaptive_benchmark.py is not in that set)
+
+------------------------------------------------------------ 6. Scope note on the runbook
+This session's instructions named RB-AS-001, but the bound workspace is
+RB-EM-001. Confirmed with the caller (decision dec-b7e46b6b17901fc1): archive
+the RB-EM-001 run. workspaces/RB-AS-001 and its existing
+evaluation_runs/RB-AS-001 artifacts were left untouched.
+
+Steps 5 and 7 of the runbook — running the private hidden grader and keeping its
+result out of this session — are executed by the external orchestrator by
+design. No hidden test file was read and no grader output was printed here.
+
+------------------------------------------------------------ 7. Artefacts
+evaluation_runs/RB-EM-001/
+    patch.diff         the change (git diff, tracked file only)
+    git_status.txt     `git status` output
+    terminal.log       this trace
+    public_test.log    public pytest run
+    metadata.json      human_intervention_count / execution_completed / model / harness
+    interventions.log  empty (0 interventions)
+    grade.json         placeholder; awaiting the external private grader

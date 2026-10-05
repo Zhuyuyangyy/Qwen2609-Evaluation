@@ -1,0 +1,129 @@
+{
+  "benchmark": "RealRepoBench-Q2609",
+  "version": "0.1",
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "benchmark_tasks": 8,
+  "valid_model_runs": 7,
+  "valid_model_submissions": 7,
+  "model_successes": 7,
+  "infrastructure_failures": 1,
+  "not_run": 0,
+  "invalid_runs": 0,
+  "infrastructure_failure_tasks": [
+    "RB-AS-004"
+  ],
+  "not_run_tasks": [],
+  "invalid_run_tasks": [],
+  "valid_run_task_success_rate": 1.0,
+  "valid_run_scope_note": "measured over valid model runs only; it is NOT the 8-task TSR",
+  "confirmed_manual_resume_task_count": 0,
+  "manual_resume_count_coverage": "1/8",
+  "manual_resume_count_status": "PARTIAL_COVERAGE",
+  "confirmed_manual_resume_task_ids": [],
+  "manual_resume_total_count": 0,
+  "manual_resume_count_unknown_tasks": [
+    "RB-AS-001",
+    "RB-AS-002",
+    "RB-AS-003",
+    "RB-AS-004",
+    "RB-AS-005",
+    "RB-EM-002",
+    "RB-EM-004"
+  ],
+  "confirmed_zero_resume_tasks": 1,
+  "resume_count_known_tasks": 1,
+  "resume_count_unknown_tasks": 7,
+  "zero_resume_autonomous_completion_rate": null,
+  "zero_resume_rate_status": "NOT_AVAILABLE",
+  "confirmed_runtime_error_task_count": 0,
+  "runtime_error_count_coverage": "1/8",
+  "runtime_error_count_status": "PARTIAL_COVERAGE",
+  "confirmed_runtime_error_task_ids": [],
+  "infrastructure_failure_tasks_count": 1,
+  "harness_valid_submission_rate": 0.875,
+  "evaluation_complete_under_original_protocol": false,
+  "incomplete_reason": "1 of 8 tasks have no valid model submission, so no 8-task Task Success Rate exists",
+  "tasks": [
+    {
+      "task_id": "RB-AS-001",
+      "run_status": "VALID_SUBMISSION",
+      "valid_model_submission": true,
+      "graded": true,
+      "task_success": true,
+      "total_score": 100,
+      "manual_resume_count": null,
+      "harness_runtime_error_count": null
+    },
+    {
+      "task_id": "RB-AS-002",
+      "run_status": "VALID_SUBMISSION",
+      "valid_model_submission": true,
+      "graded": true,
+      "task_success": true,
+      "total_score": 100,
+      "manual_resume_count": null,
+      "harness_runtime_error_count": null
+    },
+    {
+      "task_id": "RB-AS-003",
+      "run_status": "VALID_SUBMISSION",
+      "valid_model_submission": true,
+      "graded": true,
+      "task_success": true,
+      "total_score": 100,
+      "manual_resume_count": null,
+      "harness_runtime_error_count": null
+    },
+    {
+      "task_id": "RB-AS-004",
+      "run_status": "INFRASTRUCTURE_FAILURE",
+      "valid_model_submission": false,
+      "graded": false,
+      "task_success": null,
+      "total_score": null,
+      "manual_resume_count": null,
+      "harness_runtime_error_count": null
+    },
+    {
+      "task_id": "RB-AS-005",
+      "run_status": "VALID_SUBMISSION",
+      "valid_model_submission": true,
+      "graded": true,
+      "task_success": true,
+      "total_score": 100,
+      "manual_resume_count": null,
+      "harness_runtime_error_count": null
+    },
+    {
+      "task_id": "RB-EM-001",
+      "run_status": "VALID_SUBMISSION",
+      "valid_model_submission": true,
+      "graded": true,
+      "task_success": true,
+      "total_score": 100,
+      "manual_resume_count": 0,
+      "harness_runtime_error_count": 0
+    },
+    {
+      "task_id": "RB-EM-002",
+      "run_status": "VALID_SUBMISSION",
+      "valid_model_submission": true,
+      "graded": true,
+      "task_success": true,
+      "total_score": 100,
+      "manual_resume_count": null,
+      "harness_runtime_error_count": null
+    },
+    {
+      "task_id": "RB-EM-004",
+      "run_status": "VALID_SUBMISSION",
+      "valid_model_submission": true,
+      "graded": true,
+      "task_success": true,
+      "total_score": 100,
+      "manual_resume_count": null,
+      "harness_runtime_error_count": null
+    }
+  ]
+}

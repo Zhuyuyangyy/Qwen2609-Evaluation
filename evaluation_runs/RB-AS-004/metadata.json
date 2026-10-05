@@ -1,0 +1,28 @@
+{
+  "task_id": "RB-AS-004",
+  "repository": "AgentShield_V3",
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "execution_completed": false,
+  "valid_model_submission": false,
+  "grade_completed": false,
+  "start_time": null,
+  "end_time": null,
+  "duration_seconds": null,
+  "semantic_human_intervention_count": 0,
+  "manual_resume_count": null,
+  "harness_runtime_error_count": null,
+  "files_modified_count": 0,
+  "modified_paths": [],
+  "implementation_files_modified": 0,
+  "run_status": "INFRASTRUCTURE_FAILURE",
+  "notes": [
+    "No defensible final model submission exists: 0 tracked .py files modified.",
+    "The only tracked delta is repo_snapshot/backend/shield_sessions.db, a SQLite file the repository's own test suite writes at runtime; it is runtime state, not source.",
+    "No grade.json was produced for this task, and none may be invented.",
+    "Exact retry/continue and runtime-error counts could not be recovered from the surviving session evidence, so they are recorded as null rather than estimated.",
+    "No semantic human hint was provided; the workspace was never hand-edited.",
+    "This is deliberately NOT counted as a model failure."
+  ],
+  "evidence": "HARNESS_FAILURE.md, git_status.txt (both in this directory)"
+}

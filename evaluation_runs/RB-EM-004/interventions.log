@@ -1,0 +1,12 @@
+interventions: 0
+human_intervention_count: 0
+
+No manual edits were made to the workspace by this session. The single-line fix in
+repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py was produced and verified
+entirely inside the Qoder run.
+
+One clarifying decision was posed to the operator (task-id / archive-dir mismatch between
+the requested path evaluation_runs/RB-AS-001/ and the active workspace RB-EM-004). The
+operator resolved it by choosing evaluation_runs/RB-EM-004/, and the run then completed
+without further input. This counts as a routing clarification, not a code intervention:
+no file was edited, no hint was given, and the repair itself predates the question.

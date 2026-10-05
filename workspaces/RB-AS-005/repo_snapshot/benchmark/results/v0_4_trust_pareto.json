@@ -1,0 +1,142 @@
+{
+  "experiment": "v0.4_trust_aware_pareto",
+  "research_question": "Can source-aware trust and explicit user authorisation retain the attack signal provided by provenance while reducing benign over-blocking?",
+  "mode": "audit",
+  "dataset_source": "ffuuugor/agentdojo-dump",
+  "detector_label_free": true,
+  "trajectory_reconstructed_from_attack_metadata": false,
+  "native_runtime_trace": true,
+  "asr_measured": false,
+  "utility_measured": false,
+  "trust_policy_frozen_before_measurement": true,
+  "sampling": "97 benign + 400 attack trajectories",
+  "audit": {
+    "rows": 13913,
+    "trajectories": 10536,
+    "excluded": {},
+    "excluded_total": 0,
+    "median_steps": 1.0,
+    "p95_steps": 2.0,
+    "max_steps": 18,
+    "duplicate_step_keys": 3377
+  },
+  "ladder": [
+    {
+      "config": "local_only",
+      "adds": "single-event gate on the current call only"
+    },
+    {
+      "config": "plus_output_inspection",
+      "adds": "+ reacts to untrusted content in context"
+    },
+    {
+      "config": "plus_entity_provenance",
+      "adds": "+ tracks where each entity came from"
+    },
+    {
+      "config": "plus_intent_consistency",
+      "adds": "+ checks the entity against the operator's request"
+    },
+    {
+      "config": "plus_trust_policy_v0_4",
+      "adds": "+ tool-semantics trust prior and prose authorisation"
+    },
+    {
+      "config": "plus_intent_slots",
+      "adds": "+ authorisation from structured intent slots (RQ3 retry)"
+    }
+  ],
+  "results": [
+    {
+      "config": "local_only",
+      "benign_traces": 97,
+      "benign_steps": 339,
+      "benign_step_block_fpr": 0.00295,
+      "benign_step_review_rate": 0.11799,
+      "benign_trace_block_rate": 0.01031,
+      "attack_traces": 400,
+      "attack_trace_detection_rate": 0.035,
+      "attack_trace_block_rate": 0.0,
+      "delta_vs_v03_provenance": {
+        "attack_trace_block_pp": -16.0,
+        "benign_trace_block_pp": -40.21
+      }
+    },
+    {
+      "config": "plus_output_inspection",
+      "benign_traces": 97,
+      "benign_steps": 339,
+      "benign_step_block_fpr": 0.07965,
+      "benign_step_review_rate": 0.059,
+      "benign_trace_block_rate": 0.19588,
+      "attack_traces": 400,
+      "attack_trace_detection_rate": 0.07,
+      "attack_trace_block_rate": 0.035,
+      "delta_vs_v03_provenance": {
+        "attack_trace_block_pp": -12.5,
+        "benign_trace_block_pp": -21.65
+      }
+    },
+    {
+      "config": "plus_entity_provenance",
+      "benign_traces": 97,
+      "benign_steps": 339,
+      "benign_step_block_fpr": 0.19469,
+      "benign_step_review_rate": 0.059,
+      "benign_trace_block_rate": 0.41237,
+      "attack_traces": 400,
+      "attack_trace_detection_rate": 0.195,
+      "attack_trace_block_rate": 0.16,
+      "delta_vs_v03_provenance": {
+        "attack_trace_block_pp": 0.0,
+        "benign_trace_block_pp": 0.0
+      }
+    },
+    {
+      "config": "plus_intent_consistency",
+      "benign_traces": 97,
+      "benign_steps": 339,
+      "benign_step_block_fpr": 0.19469,
+      "benign_step_review_rate": 0.059,
+      "benign_trace_block_rate": 0.41237,
+      "attack_traces": 400,
+      "attack_trace_detection_rate": 0.195,
+      "attack_trace_block_rate": 0.16,
+      "delta_vs_v03_provenance": {
+        "attack_trace_block_pp": 0.0,
+        "benign_trace_block_pp": 0.0
+      }
+    },
+    {
+      "config": "plus_trust_policy_v0_4",
+      "benign_traces": 97,
+      "benign_steps": 339,
+      "benign_step_block_fpr": 0.10914,
+      "benign_step_review_rate": 0.059,
+      "benign_trace_block_rate": 0.28866,
+      "attack_traces": 400,
+      "attack_trace_detection_rate": 0.07,
+      "attack_trace_block_rate": 0.035,
+      "delta_vs_v03_provenance": {
+        "attack_trace_block_pp": -12.5,
+        "benign_trace_block_pp": -12.37
+      }
+    },
+    {
+      "config": "plus_intent_slots",
+      "benign_traces": 97,
+      "benign_steps": 339,
+      "benign_step_block_fpr": 0.10914,
+      "benign_step_review_rate": 0.059,
+      "benign_trace_block_rate": 0.28866,
+      "attack_traces": 400,
+      "attack_trace_detection_rate": 0.07,
+      "attack_trace_block_rate": 0.035,
+      "delta_vs_v03_provenance": {
+        "attack_trace_block_pp": -12.5,
+        "benign_trace_block_pp": -12.37
+      }
+    }
+  ],
+  "baseline_for_delta": "plus_entity_provenance (v0.3)"
+}

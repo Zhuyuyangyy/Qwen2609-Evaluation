@@ -1,0 +1,14 @@
+diff --git a/repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py b/repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py
+index d9a226a..0dfb6cf 100644
+--- a/repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py
++++ b/repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py
+@@ -53,7 +53,8 @@ def load_pool() -> TaskPool:
+ 
+ def run_one(system_name: str, r_base_mode: str, feedback: str, seed: int,
+             pool: TaskPool) -> dict:
+-    env = AdaptiveEnvironment(pool, r_base_mode=r_base_mode, feedback=feedback, seed=0)
++    env = AdaptiveEnvironment(pool, r_base_mode=r_base_mode, feedback=feedback,
++                              seed=seed)
+     system = SYSTEM_BUILDERS[system_name]()
+     step_decisions, step_failures = {}, {}
+     for _ in range(env.T_test):

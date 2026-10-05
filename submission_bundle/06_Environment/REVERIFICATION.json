@@ -1,0 +1,74 @@
+[
+  {
+    "task_id": "RB-AS-005",
+    "recomputed": {
+      "task_id": "RB-AS-005",
+      "scores": {
+        "functional_correctness": 60,
+        "hidden_tests": 20,
+        "constraint_compliance": 10,
+        "no_regression": 10,
+        "total": 100
+      },
+      "task_success": true,
+      "baseline_relative": {
+        "target_fix_pass": true,
+        "regression_pass": true,
+        "new_failures": [],
+        "surviving_target_failures": []
+      },
+      "reasons": [],
+      "violations": []
+    },
+    "recorded": {
+      "task_id": "RB-AS-005",
+      "scores": {
+        "functional_correctness": 60,
+        "hidden_tests": 20,
+        "constraint_compliance": 10,
+        "no_regression": 10,
+        "total": 100
+      },
+      "task_success": true,
+      "baseline_relative": {
+        "target_fix_pass": true,
+        "regression_pass": true,
+        "new_failures": [],
+        "surviving_target_failures": []
+      },
+      "reasons": [],
+      "violations": []
+    },
+    "agrees": true,
+    "detail": {
+      "public": {
+        "exit_code": 0,
+        "passed": 5,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "failed_test_ids": [],
+        "raw_tail": ".....                                                                    [100%]\n5 passed in 0.41s\n<python-home>"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the \"fixture\" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+      },
+      "hidden": {
+        "exit_code": 0,
+        "passed": 7,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "failed_test_ids": [],
+        "raw_tail": ".......                                                                  [100%]\n7 passed in 0.40s\n<python-home>"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the \"fixture\" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+      },
+      "regression": {
+        "exit_code": 0,
+        "passed": 640,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 1,
+        "failed_test_ids": [],
+        "raw_tail": "mp-2324012632\\reverify-RB-AS-005-r_4xydyk\\work\\repo_snapshot\\backend\\app\\main.py:77: DeprecationWarning: \n          on_event is deprecated, use lifespan event handlers instead.\n  \n          Read more about it in the\n          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).\n          \n    @app.on_event(\"startup\")\n\nbackend/tests/test_api_routes.py::TestV3RoutesMain::test_health_endpoint\n  <python-home>"asyncio_default_fixture_loop_scope\" is unset.\nThe event loop scope for asynchronous fixtures will default to the \"fixture\" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to \"function\" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: \"function\", \"class\", \"module\", \"package\", \"session\"\n\n  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))\n"
+      },
+      "violations": []
+    }
+  }
+]

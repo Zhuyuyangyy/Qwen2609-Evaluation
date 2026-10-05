@@ -1,0 +1,61 @@
+{
+  "human_intervention_count": 0,
+  "execution_completed": true,
+  "execution_error": null,
+  "environment_error": null,
+  "timed_out": false,
+  "constraint_violation": false,
+  "test_gaming_suspected": false,
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "grade_completed": true,
+  "task_id": "RB-EM-002",
+  "repository": "emotion-like-functional-modulation-main",
+  "category": "bug_fix",
+  "difficulty": "hard",
+  "task_type": "hidden_only_bug",
+  "public_test_command": "pytest -q public_tests/test_public.py",
+  "test_command": "pytest -q",
+  "time_budget_seconds": 1200,
+  "public_tests": {
+    "passed": 6,
+    "failed": 0,
+    "exit_code": 0
+  },
+  "hidden_tests_run": true,
+  "hidden_tests_result": "withheld from this session by protocol",
+  "regression_tests": {
+    "passed": 412,
+    "failed": 1,
+    "skipped": 0,
+    "exit_code": 1
+  },
+  "files_modified_count": 1,
+  "modified_paths": [
+    "repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py"
+  ],
+  "grader_version": "1.0.0",
+  "grader_invocation": "python RealRepoBench-Q2609/grader/score.py <isolated staging bundle>",
+  "grader_exit_code": 0,
+  "isolation": {
+    "method": "workspace repo_snapshot copied to an isolated staging directory outside the Qoder session (evaluation_runs/RB-EM-002/_staging); hidden tests and score.py executed there; all test/metric output redirected to files; hidden grader results never surfaced into the agent session",
+    "frozen_benchmark_modified": false,
+    "grader_modified": false,
+    "staging_dir": "D:\\ZYY Project\\Qwen2609-Evaluation\\evaluation_runs\\RB-EM-002\\_staging",
+    "hidden_results_surfaced_to_session": false
+  },
+  "constraint_compliance": {
+    "tests_unmodified": true,
+    "missing_runs_not_dropped": true,
+    "frozen_files_unchanged": true,
+    "forbidden_paths_untouched": true
+  },
+  "fix_summary": "aggregate() in repo_snapshot/experiments/adaptive_v10/run_adaptive_benchmark.py divided the sum of squared deviations by n, i.e. the biased population variance, so the reported std systematically understated seed-to-seed variation. The divisor is now Bessel-corrected (n - 1), computed as 0.0 when n == 1 so the single-seed edge case neither divides by zero nor reports a bogus spread. The public contract is unchanged: the returned key set (mean, std, min, max, n), each key's meaning, the arithmetic mean, the min/max, and the n (which still counts only runs whose metric is present) are all as before. Missing runs are still skipped per metric and never dropped from the list, and the empty-input contract still returns {'mean': None, 'n': 0}.",
+  "notes": "The task's target defect is the biased estimator; the prompt also names missing-run handling, which the shipped code already performed correctly (per-metric None filtering with no dropping), so that path was left intact and is covered by the public checks. The 1 remaining regression failure is tests/test_adaptive_v10.py::TestSystemComparability::test_all_systems_run_an_episode (AttributeError: 'EwmaAppraisalSystem' object has no attribute 'hazard_hat'), recorded in RealRepoBench-Q2609/tasks/RB-EM-002/baseline_failures.json as a pre-existing failure unrelated to this defect; it is identical before and after the change, so no regression was introduced.",
+  "run_status": "VALID_SUBMISSION",
+  "valid_model_submission": true,
+  "semantic_human_intervention_count": 0,
+  "manual_resume_count": null,
+  "harness_runtime_error_count": null,
+  "implementation_files_modified": 1
+}

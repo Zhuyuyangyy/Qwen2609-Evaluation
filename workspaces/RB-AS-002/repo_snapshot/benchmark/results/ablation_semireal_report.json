@@ -1,0 +1,214 @@
+{
+  "dataset": "/workspace/benchmark/test_cases/test_cases_semireal_150.json",
+  "total_cases": 150,
+  "labels": [
+    "ALLOW",
+    "HUMAN_REVIEW",
+    "BLOCK"
+  ],
+  "ablation": [
+    {
+      "name": "0  Full AgentShield",
+      "total": 150,
+      "action_accuracy": 0.7667,
+      "macro_f1": 0.7511,
+      "block_recall": 0.75,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.2333,
+      "mean_absolute_score_error": 0.0873,
+      "runtime_ms_per_case": 0.0088,
+      "per_label": {
+        "ALLOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.5714,
+          "recall": 0.5,
+          "f1": 0.5333
+        },
+        "BLOCK": {
+          "precision": 0.6923,
+          "recall": 0.75,
+          "f1": 0.72
+        }
+      }
+    },
+    {
+      "name": "1  −stage boost",
+      "total": 150,
+      "action_accuracy": 0.6333,
+      "macro_f1": 0.5821,
+      "block_recall": 0.0833,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.6333,
+      "mean_absolute_score_error": 0.078,
+      "runtime_ms_per_case": 0.0079,
+      "per_label": {
+        "ALLOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4211,
+          "recall": 1.0,
+          "f1": 0.5926
+        },
+        "BLOCK": {
+          "precision": 1.0,
+          "recall": 0.0833,
+          "f1": 0.1538
+        }
+      }
+    },
+    {
+      "name": "2  −category×chain boost",
+      "total": 150,
+      "action_accuracy": 0.7667,
+      "macro_f1": 0.7511,
+      "block_recall": 0.75,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.2333,
+      "mean_absolute_score_error": 0.0873,
+      "runtime_ms_per_case": 0.008,
+      "per_label": {
+        "ALLOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.5714,
+          "recall": 0.5,
+          "f1": 0.5333
+        },
+        "BLOCK": {
+          "precision": 0.6923,
+          "recall": 0.75,
+          "f1": 0.72
+        }
+      }
+    },
+    {
+      "name": "3  −external+sensitive boost",
+      "total": 150,
+      "action_accuracy": 0.7667,
+      "macro_f1": 0.7511,
+      "block_recall": 0.75,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.2333,
+      "mean_absolute_score_error": 0.0873,
+      "runtime_ms_per_case": 0.0081,
+      "per_label": {
+        "ALLOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.5714,
+          "recall": 0.5,
+          "f1": 0.5333
+        },
+        "BLOCK": {
+          "precision": 0.6923,
+          "recall": 0.75,
+          "f1": 0.72
+        }
+      }
+    },
+    {
+      "name": "4  −audit/evasion boosts",
+      "total": 150,
+      "action_accuracy": 0.7667,
+      "macro_f1": 0.7511,
+      "block_recall": 0.75,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.2333,
+      "mean_absolute_score_error": 0.0873,
+      "runtime_ms_per_case": 0.008,
+      "per_label": {
+        "ALLOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.5714,
+          "recall": 0.5,
+          "f1": 0.5333
+        },
+        "BLOCK": {
+          "precision": 0.6923,
+          "recall": 0.75,
+          "f1": 0.72
+        }
+      }
+    },
+    {
+      "name": "5  −special-case rules",
+      "total": 150,
+      "action_accuracy": 0.6333,
+      "macro_f1": 0.5402,
+      "block_recall": 0.75,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.1,
+      "mean_absolute_score_error": 0.0967,
+      "runtime_ms_per_case": 0.0074,
+      "per_label": {
+        "ALLOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "BLOCK": {
+          "precision": 0.5294,
+          "recall": 0.75,
+          "f1": 0.6207
+        }
+      }
+    },
+    {
+      "name": "6  Local context (all chain)",
+      "total": 150,
+      "action_accuracy": 0.6667,
+      "macro_f1": 0.6337,
+      "block_recall": 0.1667,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.6,
+      "mean_absolute_score_error": 0.0753,
+      "runtime_ms_per_case": 0.0048,
+      "per_label": {
+        "ALLOW": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4444,
+          "recall": 1.0,
+          "f1": 0.6154
+        },
+        "BLOCK": {
+          "precision": 1.0,
+          "recall": 0.1667,
+          "f1": 0.2857
+        }
+      }
+    }
+  ]
+}

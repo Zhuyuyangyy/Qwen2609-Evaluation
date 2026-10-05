@@ -1,0 +1,25 @@
+dataset,ablated_component,metric,full_value,ablated_value,delta,delta_pct
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,1  −stage boost,action_accuracy,0.7667,0.6333,-0.1334,-17.4
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,1  −stage boost,macro_f1,0.7511,0.5821,-0.1690,-22.5
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,1  −stage boost,block_recall,0.7500,0.0833,-0.6667,-88.89
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,1  −stage boost,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,2  −category×chain boost,action_accuracy,0.7667,0.7667,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,2  −category×chain boost,macro_f1,0.7511,0.7511,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,2  −category×chain boost,block_recall,0.7500,0.7500,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,2  −category×chain boost,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,3  −external+sensitive boost,action_accuracy,0.7667,0.7667,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,3  −external+sensitive boost,macro_f1,0.7511,0.7511,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,3  −external+sensitive boost,block_recall,0.7500,0.7500,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,3  −external+sensitive boost,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,4  −audit/evasion boosts,action_accuracy,0.7667,0.7667,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,4  −audit/evasion boosts,macro_f1,0.7511,0.7511,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,4  −audit/evasion boosts,block_recall,0.7500,0.7500,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,4  −audit/evasion boosts,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,5  −special-case rules,action_accuracy,0.7667,0.6333,-0.1334,-17.4
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,5  −special-case rules,macro_f1,0.7511,0.5402,-0.2109,-28.08
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,5  −special-case rules,block_recall,0.7500,0.7500,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,5  −special-case rules,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,6  Local context (all chain),action_accuracy,0.7667,0.6667,-0.1000,-13.04
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,6  Local context (all chain),macro_f1,0.7511,0.6337,-0.1174,-15.63
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,6  Local context (all chain),block_recall,0.7500,0.1667,-0.5833,-77.77
+/workspace/benchmark/test_cases/test_cases_semireal_150.json,6  Local context (all chain),false_allow_rate,0.0000,0.0000,0.0000,0.0

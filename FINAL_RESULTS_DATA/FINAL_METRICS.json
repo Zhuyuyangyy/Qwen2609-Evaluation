@@ -1,0 +1,102 @@
+{
+  "benchmark": "RealRepoBench-Q2609",
+  "version": "0.1",
+  "model": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "benchmark_tasks": 8,
+  "valid_model_submissions": 7,
+  "valid_model_successes": 7,
+  "infrastructure_failures": 1,
+  "not_run": 0,
+  "invalid_runs": 0,
+  "valid_run_task_success_rate": 1.0,
+  "valid_run_scope_note": "Denominator is valid model runs only. This is NOT the 8-task Task Success Rate.",
+  "harness_valid_submission_rate": 0.875,
+  "confirmed_manual_resume_task_count": 0,
+  "confirmed_manual_resume_task_ids": [],
+  "manual_resume_total_count": 0,
+  "manual_resume_count_coverage": "1/8",
+  "manual_resume_count_status": "PARTIAL_COVERAGE",
+  "manual_resume_unrecoverable_tasks": [
+    "RB-AS-001",
+    "RB-AS-002",
+    "RB-AS-003",
+    "RB-AS-004",
+    "RB-AS-005",
+    "RB-EM-002",
+    "RB-EM-004"
+  ],
+  "manual_resume_unrecoverable_count": 7,
+  "manual_resume_scope_note": "Only 1/8 tasks have a recovered manual_resume_count; the rest are unrecoverable and are NOT counted as zero.",
+  "confirmed_runtime_error_task_count": 0,
+  "confirmed_runtime_error_task_ids": [],
+  "runtime_error_count_coverage": "1/8",
+  "runtime_error_count_status": "PARTIAL_COVERAGE",
+  "runtime_error_unrecoverable_tasks": [
+    "RB-AS-001",
+    "RB-AS-002",
+    "RB-AS-003",
+    "RB-AS-004",
+    "RB-AS-005",
+    "RB-EM-002",
+    "RB-EM-004"
+  ],
+  "confirmed_zero_resume_tasks": 1,
+  "resume_count_known_tasks": 1,
+  "resume_count_unknown_tasks": 7,
+  "zero_resume_autonomous_completion_rate": null,
+  "zero_resume_rate_status": "NOT_AVAILABLE",
+  "zero_resume_rate_note": "NOT_AVAILABLE. Only 1 of 8 tasks have a recovered manual_resume_count (1 of them zero); 7 tasks' counts are unrecoverable. A denominator of 8 would score the unknown tasks as if they had been measured, so no rate is published.",
+  "evaluation_complete_under_original_protocol": false,
+  "original_8_task_tsr_available": false,
+  "original_8_task_tsr": null,
+  "ceiling_effect_facts": {
+    "valid_run_n": 7,
+    "valid_run_successes": 7,
+    "perfect_scores_among_valid_runs": 7,
+    "correctness_failures_among_valid_runs": 0,
+    "observed": true
+  },
+  "duration_coverage": {
+    "tasks_with_duration": 2,
+    "tasks_total": 8,
+    "tasks_without_duration": [
+      "RB-AS-002",
+      "RB-AS-004",
+      "RB-AS-005",
+      "RB-EM-001",
+      "RB-EM-002",
+      "RB-EM-004"
+    ],
+    "median_duration_seconds": null,
+    "median_duration_note": "NOT_AVAILABLE. Duration was recorded for a minority of tasks, so no representative median is reported; a statistic computed on that subset would describe the subset, not the run."
+  },
+  "metrics_not_available": {
+    "manual_resume_count_per_task_unrecoverable": [
+      "RB-AS-001",
+      "RB-AS-002",
+      "RB-AS-003",
+      "RB-AS-004",
+      "RB-AS-005",
+      "RB-EM-002",
+      "RB-EM-004"
+    ],
+    "harness_runtime_error_count_unrecoverable": [
+      "RB-AS-001",
+      "RB-AS-002",
+      "RB-AS-003",
+      "RB-AS-004",
+      "RB-AS-005",
+      "RB-EM-002",
+      "RB-EM-004"
+    ],
+    "duration_unrecoverable": [
+      "RB-AS-002",
+      "RB-AS-004",
+      "RB-AS-005",
+      "RB-EM-001",
+      "RB-EM-002",
+      "RB-EM-004"
+    ]
+  }
+}

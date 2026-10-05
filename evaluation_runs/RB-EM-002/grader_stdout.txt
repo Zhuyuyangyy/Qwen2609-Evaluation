@@ -1,0 +1,53 @@
+{
+  "grader_version": "1.0.0",
+  "scores": [
+    {
+      "task_id": "RB-EM-002",
+      "scores": {
+        "functional_correctness": 60,
+        "hidden_tests": 20,
+        "constraint_compliance": 10,
+        "no_regression": 10,
+        "total": 100
+      },
+      "task_success": true,
+      "baseline_relative": {
+        "target_fix_pass": true,
+        "regression_pass": true,
+        "new_failures": [],
+        "surviving_target_failures": []
+      },
+      "reasons": [
+        "regression: suite not green, but every failure was already in the baseline (1 known pre-existing)"
+      ],
+      "violations": []
+    }
+  ],
+  "summary": {
+    "task_success_rate": 1.0,
+    "task_success_count": 1,
+    "tasks_total": 1,
+    "mean_total_score": 100.0,
+    "baseline_relative": {
+      "target_fix_pass_rate": 1.0,
+      "regression_pass_rate": 1.0
+    },
+    "breakdown": {
+      "mean_functional": 60.0,
+      "mean_hidden": 20.0,
+      "mean_constraints": 10.0,
+      "mean_regression": 10.0
+    },
+    "task_success_rate_bug_fix": null,
+    "task_success_rate_multifile": 1.0,
+    "constraint_compliance_rate": 1.0,
+    "regression_rate": 0.0,
+    "by_component": {
+      "bug_fix_correctness": [],
+      "multifile_correctness": [],
+      "constraint_compliance": [],
+      "regression_rate": [],
+      "human_intervention": []
+    }
+  }
+}

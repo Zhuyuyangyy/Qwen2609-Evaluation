@@ -1,0 +1,448 @@
+{
+  "dataset": "/workspace/benchmark/test_cases/test_cases_sci_600.json",
+  "total_cases": 600,
+  "labels": [
+    "ALLOW",
+    "HUMAN_REVIEW",
+    "BLOCK"
+  ],
+  "ablation": [
+    {
+      "name": "0  Full AgentShield",
+      "total": 600,
+      "action_accuracy": 0.7533,
+      "macro_f1": 0.7261,
+      "block_recall": 0.8479,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.064,
+      "human_review_rate": 0.4767,
+      "mean_absolute_score_error": 0.1532,
+      "runtime_ms_per_case": 0.0119,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.5946,
+          "recall": 0.528,
+          "f1": 0.5593
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.7063,
+          "recall": 0.7829,
+          "f1": 0.7426
+        },
+        "BLOCK": {
+          "precision": 0.9064,
+          "recall": 0.8479,
+          "f1": 0.8762
+        }
+      }
+    },
+    {
+      "name": "1  −stage boost",
+      "total": 600,
+      "action_accuracy": 0.7583,
+      "macro_f1": 0.7335,
+      "block_recall": 0.8479,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.064,
+      "human_review_rate": 0.4717,
+      "mean_absolute_score_error": 0.1502,
+      "runtime_ms_per_case": 0.0111,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.6053,
+          "recall": 0.552,
+          "f1": 0.5774
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.7138,
+          "recall": 0.7829,
+          "f1": 0.7468
+        },
+        "BLOCK": {
+          "precision": 0.9064,
+          "recall": 0.8479,
+          "f1": 0.8762
+        }
+      }
+    },
+    {
+      "name": "2  −category×chain boost",
+      "total": 600,
+      "action_accuracy": 0.7583,
+      "macro_f1": 0.7335,
+      "block_recall": 0.8479,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.064,
+      "human_review_rate": 0.4717,
+      "mean_absolute_score_error": 0.1476,
+      "runtime_ms_per_case": 0.0109,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.6053,
+          "recall": 0.552,
+          "f1": 0.5774
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.7138,
+          "recall": 0.7829,
+          "f1": 0.7468
+        },
+        "BLOCK": {
+          "precision": 0.9064,
+          "recall": 0.8479,
+          "f1": 0.8762
+        }
+      }
+    },
+    {
+      "name": "3  −external+sensitive boost",
+      "total": 600,
+      "action_accuracy": 0.7533,
+      "macro_f1": 0.7261,
+      "block_recall": 0.8479,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.064,
+      "human_review_rate": 0.4767,
+      "mean_absolute_score_error": 0.1532,
+      "runtime_ms_per_case": 0.011,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.5946,
+          "recall": 0.528,
+          "f1": 0.5593
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.7063,
+          "recall": 0.7829,
+          "f1": 0.7426
+        },
+        "BLOCK": {
+          "precision": 0.9064,
+          "recall": 0.8479,
+          "f1": 0.8762
+        }
+      }
+    },
+    {
+      "name": "4  −audit/evasion boosts",
+      "total": 600,
+      "action_accuracy": 0.7517,
+      "macro_f1": 0.726,
+      "block_recall": 0.7926,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.056,
+      "human_review_rate": 0.5167,
+      "mean_absolute_score_error": 0.1494,
+      "runtime_ms_per_case": 0.0108,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.5946,
+          "recall": 0.528,
+          "f1": 0.5593
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.6871,
+          "recall": 0.8256,
+          "f1": 0.75
+        },
+        "BLOCK": {
+          "precision": 0.9609,
+          "recall": 0.7926,
+          "f1": 0.8687
+        }
+      }
+    },
+    {
+      "name": "5  −special-case rules",
+      "total": 600,
+      "action_accuracy": 0.5133,
+      "macro_f1": 0.4778,
+      "block_recall": 0.8479,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.248,
+      "human_review_rate": 0.3017,
+      "mean_absolute_score_error": 0.1861,
+      "runtime_ms_per_case": 0.0097,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.7,
+          "recall": 0.28,
+          "f1": 0.4
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4917,
+          "recall": 0.345,
+          "f1": 0.4055
+        },
+        "BLOCK": {
+          "precision": 0.4986,
+          "recall": 0.8479,
+          "f1": 0.628
+        }
+      }
+    },
+    {
+      "name": "6  Local context (all chain)",
+      "total": 600,
+      "action_accuracy": 0.6267,
+      "macro_f1": 0.6098,
+      "block_recall": 0.7696,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.16,
+      "human_review_rate": 0.4333,
+      "mean_absolute_score_error": 0.1569,
+      "runtime_ms_per_case": 0.0067,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.7761,
+          "recall": 0.416,
+          "f1": 0.5417
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.6038,
+          "recall": 0.6085,
+          "f1": 0.6062
+        },
+        "BLOCK": {
+          "precision": 0.6117,
+          "recall": 0.7696,
+          "f1": 0.6816
+        }
+      }
+    }
+  ],
+  "baselines": [
+    {
+      "name": "Tool-name rules",
+      "total": 600,
+      "action_accuracy": 0.2083,
+      "macro_f1": 0.125,
+      "block_recall": 0.0,
+      "false_allow_rate": 0.9724,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.0267,
+      "mean_absolute_score_error": 0.4592,
+      "runtime_ms_per_case": 0.0027,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.2055,
+          "recall": 0.96,
+          "f1": 0.3385
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.3125,
+          "recall": 0.0194,
+          "f1": 0.0365
+        },
+        "BLOCK": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "name": "Content keywords",
+      "total": 600,
+      "action_accuracy": 0.3267,
+      "macro_f1": 0.3177,
+      "block_recall": 0.1336,
+      "false_allow_rate": 0.0737,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.3933,
+      "mean_absolute_score_error": 0.208,
+      "runtime_ms_per_case": 0.0059,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.3689,
+          "recall": 0.912,
+          "f1": 0.5253
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.2246,
+          "recall": 0.2054,
+          "f1": 0.2146
+        },
+        "BLOCK": {
+          "precision": 0.5273,
+          "recall": 0.1336,
+          "f1": 0.2132
+        }
+      }
+    },
+    {
+      "name": "Local context",
+      "total": 600,
+      "action_accuracy": 0.6267,
+      "macro_f1": 0.6098,
+      "block_recall": 0.7696,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.16,
+      "human_review_rate": 0.4333,
+      "mean_absolute_score_error": 0.1569,
+      "runtime_ms_per_case": 0.0068,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.7761,
+          "recall": 0.416,
+          "f1": 0.5417
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.6038,
+          "recall": 0.6085,
+          "f1": 0.6062
+        },
+        "BLOCK": {
+          "precision": 0.6117,
+          "recall": 0.7696,
+          "f1": 0.6816
+        }
+      }
+    },
+    {
+      "name": "LLM Guard",
+      "total": 600,
+      "action_accuracy": 0.4617,
+      "macro_f1": 0.4422,
+      "block_recall": 0.3134,
+      "false_allow_rate": 0.106,
+      "false_block_rate": 0.064,
+      "human_review_rate": 0.5767,
+      "mean_absolute_score_error": 0.2524,
+      "runtime_ms_per_case": 0.1083,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.3212,
+          "recall": 0.424,
+          "f1": 0.3655
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4509,
+          "recall": 0.6047,
+          "f1": 0.5166
+        },
+        "BLOCK": {
+          "precision": 0.764,
+          "recall": 0.3134,
+          "f1": 0.4444
+        }
+      }
+    },
+    {
+      "name": "NeMo Guardrails",
+      "total": 600,
+      "action_accuracy": 0.3417,
+      "macro_f1": 0.3274,
+      "block_recall": 0.2581,
+      "false_allow_rate": 0.5853,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.1167,
+      "mean_absolute_score_error": 0.4094,
+      "runtime_ms_per_case": 0.026,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.257,
+          "recall": 0.952,
+          "f1": 0.4048
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.4286,
+          "recall": 0.1163,
+          "f1": 0.1829
+        },
+        "BLOCK": {
+          "precision": 0.8358,
+          "recall": 0.2581,
+          "f1": 0.3944
+        }
+      }
+    },
+    {
+      "name": "LLM-as-Judge",
+      "total": 600,
+      "action_accuracy": 0.2083,
+      "macro_f1": 0.1149,
+      "block_recall": 0.0,
+      "false_allow_rate": 1.0,
+      "false_block_rate": 0.0,
+      "human_review_rate": 0.0,
+      "mean_absolute_score_error": 0.5501,
+      "runtime_ms_per_case": 0.0144,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.2083,
+          "recall": 1.0,
+          "f1": 0.3448
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        "BLOCK": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      }
+    },
+    {
+      "name": "AgentShield chain-aware",
+      "total": 600,
+      "action_accuracy": 0.7783,
+      "macro_f1": 0.7219,
+      "block_recall": 0.9447,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.2,
+      "human_review_rate": 0.46,
+      "mean_absolute_score_error": 0.1603,
+      "runtime_ms_per_case": 0.0197,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.6203,
+          "recall": 0.392,
+          "f1": 0.4804
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.7717,
+          "recall": 0.8256,
+          "f1": 0.7978
+        },
+        "BLOCK": {
+          "precision": 0.8367,
+          "recall": 0.9447,
+          "f1": 0.8874
+        }
+      }
+    },
+    {
+      "name": "AgentShield + Graph",
+      "total": 600,
+      "action_accuracy": 0.4783,
+      "macro_f1": 0.3883,
+      "block_recall": 1.0,
+      "false_allow_rate": 0.0,
+      "false_block_rate": 0.312,
+      "human_review_rate": 0.1933,
+      "mean_absolute_score_error": 0.202,
+      "runtime_ms_per_case": 0.0876,
+      "per_label": {
+        "ALLOW": {
+          "precision": 0.4651,
+          "recall": 0.16,
+          "f1": 0.2381
+        },
+        "HUMAN_REVIEW": {
+          "precision": 0.431,
+          "recall": 0.1938,
+          "f1": 0.2674
+        },
+        "BLOCK": {
+          "precision": 0.4921,
+          "recall": 1.0,
+          "f1": 0.6596
+        }
+      }
+    }
+  ]
+}

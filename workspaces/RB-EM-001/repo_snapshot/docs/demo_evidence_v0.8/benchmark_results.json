@@ -1,0 +1,38 @@
+{
+  "plain": {
+    "risky_auto_execution_rate": 0.37,
+    "verification_appropriateness": 0.0,
+    "trust_calibration_error": 0.059999999999999984,
+    "recovery_quality": 0.0,
+    "generalization_precision": 0.0,
+    "false_over_caution_rate": 0.0,
+    "task_success_rate": 0.0
+  },
+  "memory": {
+    "risky_auto_execution_rate": 0.37,
+    "verification_appropriateness": 0.0,
+    "trust_calibration_error": 0.059999999999999984,
+    "recovery_quality": 0.0,
+    "generalization_precision": 0.0,
+    "false_over_caution_rate": 0.0,
+    "task_success_rate": 0.0
+  },
+  "risk": {
+    "risky_auto_execution_rate": 0.37,
+    "verification_appropriateness": 0.0,
+    "trust_calibration_error": 0.059999999999999984,
+    "recovery_quality": 0.0,
+    "generalization_precision": 0.0,
+    "false_over_caution_rate": 0.0,
+    "task_success_rate": 0.0
+  },
+  "full": {
+    "risky_auto_execution_rate": 0.37,
+    "verification_appropriateness": 0.0,
+    "trust_calibration_error": 0.059999999999999984,
+    "recovery_quality": 0.3,
+    "generalization_precision": 0.0,
+    "false_over_caution_rate": 0.0,
+    "task_success_rate": 0.06
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "agentdojo_version": "0.1.35",
+  "agentdojo_installed_version": "0.1.35",
+  "agentdojo_wheel_sha256": "364bea4219716b716bf639f504d195943f7f6a5535d312ca41d7098704a2affd",
+  "benchmark_version": "v1.2.2",
+  "suite": "workspace",
+  "agentshield_git_sha": "7d1c061c3c8ad6645a11a7406112c4880976f106",
+  "gate_source_sha256": "66acbbc41c3499048272ba635e2d4bdfcae288a312f32a40008cc98765121a78",
+  "gate_source_path": "benchmark\\agentdojo_live_eval.py",
+  "models": {
+    "deepseek": {
+      "identifier": "deepseek-chat",
+      "provider_base_url": "https://api.deepseek.com",
+      "requested_model": "deepseek-chat",
+      "tier": "headline",
+      "pipeline_tag": "deepseek-chat",
+      "model_names_key": null,
+      "name_addressing_attacks_allowed": false,
+      "validity_pipeline": "agentshield-no_governance-deepseek-chat",
+      "llm_adapter": "agentdojo_live_eval.OpenAICompatibleLLM",
+      "system_role": "system",
+      "pipeline_names": {
+        "agentshield-v0_4_1-deepseek-chat": null
+      }
+    }
+  },
+  "attacks": [
+    "direct",
+    "ignore_previous",
+    "injecagent"
+  ],
+  "rungs": [
+    {
+      "rung": "v0_4_1",
+      "factory": "cfg_trust_slots",
+      "passthrough": false,
+      "hardstop": false,
+      "block_threshold": 0.9,
+      "review_threshold": 0.6
+    }
+  ],
+  "user_tasks": [
+    "user_task_0",
+    "user_task_11",
+    "user_task_14",
+    "user_task_17",
+    "user_task_2",
+    "user_task_22",
+    "user_task_25",
+    "user_task_28",
+    "user_task_30",
+    "user_task_33"
+  ],
+  "injection_tasks": [
+    "injection_task_0",
+    "injection_task_1",
+    "injection_task_10",
+    "injection_task_11",
+    "injection_task_12",
+    "injection_task_13",
+    "injection_task_2",
+    "injection_task_3",
+    "injection_task_4",
+    "injection_task_5",
+    "injection_task_6",
+    "injection_task_7",
+    "injection_task_8",
+    "injection_task_9"
+  ],
+  "subset_rule": "sorted(user_tasks)[::3][:10]",
+  "block_threshold": 0.9,
+  "review_threshold": 0.6,
+  "review_policy": "log_and_allow",
+  "output_trust_policy": "untrusted",
+  "max_iters": 15,
+  "min_headroom": null,
+  "headroom_rule": null,
+  "valid_injection_tasks": null,
+  "returned_models": {
+    "deepseek": [
+      "deepseek-flash"
+    ]
+  },
+  "created_at": "2026-09-27T04:47:39.337813+00:00",
+  "manifest_hash": "2e8b594aa32b111496d6fd61c165019a2eb3a3523114519afc71f06b1c76a396",
+  "diagnosis": {
+    "mode": "benign re-run of named tasks, no attack, no rule changed",
+    "model": "deepseek",
+    "user_tasks": [
+      "user_task_25",
+      "user_task_33"
+    ],
+    "rungs": [
+      "no_governance",
+      "v0_4_1"
+    ],
+    "attacks": [],
+    "reruns_cached_cells": true,
+    "rerun_reason": "a cached benign cell produces no sidecar rows, and the sidecar is the only place the engine's own decomposition exists"
+  },
+  "llm_calls": {
+    "deepseek": 31
+  },
+  "finished_at": "2026-09-27T04:48:21.687819+00:00"
+}

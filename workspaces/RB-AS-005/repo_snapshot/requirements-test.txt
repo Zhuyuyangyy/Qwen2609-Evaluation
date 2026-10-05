@@ -1,0 +1,20 @@
+# Test-only dependencies.
+#
+# The suite imports the benchmark harnesses (logged-trace replay, held-out
+# generalisation, paired control), and those read the cached AgentDojo dump
+# via pyarrow. datasets is needed by the two external-benchmark adapters.
+# These are NOT runtime dependencies of the governance service; installing
+# them only for tests keeps the production image lean.
+
+-r requirements.txt
+
+pytest>=8.0.0
+anyio
+httpx
+pytest-anyio
+
+# Reading the cached Arrow dumps under benchmark/external_datasets/
+pyarrow>=14.0
+
+# Used by benchmark/external_experiment.py to load AgentDojo / AgentHarm
+datasets>=2.14.0

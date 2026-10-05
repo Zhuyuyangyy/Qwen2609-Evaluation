@@ -1,0 +1,26 @@
+=== git status --porcelain ===
+ M repo_snapshot/backend/shield_sessions.db
+?? repo_snapshot/backend/__pycache__/
+?? repo_snapshot/backend/app/__pycache__/
+?? repo_snapshot/backend/app/api/__pycache__/
+?? repo_snapshot/backend/app/console/__pycache__/
+?? repo_snapshot/backend/app/cp/__pycache__/
+?? repo_snapshot/backend/app/mcp/__pycache__/
+?? repo_snapshot/backend/app/security/__pycache__/
+?? repo_snapshot/backend/app/shield/__pycache__/
+?? repo_snapshot/backend/tests/__pycache__/
+?? repo_snapshot/benchmark/__pycache__/
+?? repo_snapshot/scripts/__pycache__/
+?? repo_snapshot/tests/__pycache__/
+
+=== git diff --stat HEAD ===
+ repo_snapshot/backend/shield_sessions.db | Bin 122880 -> 180224 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+=== .py 修改计数 ===
+0
+
+=== HEAD ===
+e5b2fd8 RealRepoBench frozen baseline
+=== remote ===
+(空=无remote)

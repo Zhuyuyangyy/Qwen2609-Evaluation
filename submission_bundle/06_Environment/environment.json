@@ -1,0 +1,17 @@
+{
+  "python": "3.13.7",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "machine": "AMD64",
+  "pytest": "9.1.1",
+  "benchmark": "RealRepoBench-Q2609 v0.1",
+  "frozen_tasks": 8,
+  "model_under_test": "qwen-latest-series-invite-2609",
+  "harness": "Qoder",
+  "grading_host_os": "Windows-10-10.0.19045-SP0",
+  "agent_session_os": "NOT_AVAILABLE",
+  "notes": [
+    "Environment was recorded on the machine that performed the grading and is NOT necessarily the machine that executed the Qoder agent sessions.",
+    "The OS of the Qoder session host is NOT_AVAILABLE: no artifact establishes it, and it was not guessed.",
+    "No API key, token, credential, password or .env file appears anywhere in this bundle; the build refuses credential-shaped filenames and scans every file for secret-shaped content."
+  ]
+}

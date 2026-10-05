@@ -1,0 +1,488 @@
+{
+  "benchmark": "RealRepoBench-Q2609",
+  "version": "0.1",
+  "frozen": true,
+  "frozen_at": "2026-09-29T13:43:12.408745+00:00",
+  "frozen_task_ids": [
+    "RB-AS-001",
+    "RB-AS-002",
+    "RB-AS-003",
+    "RB-AS-004",
+    "RB-AS-005",
+    "RB-EM-001",
+    "RB-EM-002",
+    "RB-EM-004"
+  ],
+  "deferred_task_ids": [
+    "RB-EM-003",
+    "RB-PS-001",
+    "RB-PS-002",
+    "RB-PS-003"
+  ],
+  "deferred_reasons": {
+    "RB-EM-003": "REJECTED at construction: pytest --collect-only -q returns 413 collected, so README's '412 passed' is correct for passed-count semantics; the only stale figure is a single location (README:474). No frozen artifact backs the regime-means table, so no richer docs-consistency instance is constructible without inventing data.",
+    "RB-PS-001": "deferred: DRX SPARK environment and harness not yet baselined",
+    "RB-PS-002": "deferred: DRX SPARK environment and harness not yet baselined",
+    "RB-PS-003": "deferred: DRX SPARK environment and harness not yet baselined"
+  },
+  "provenance": {
+    "kind": "private benchmark built from real local repositories",
+    "construction": "real repository -> select current code -> re-inject an equivalent defect -> private snapshot without .git -> own public/hidden checks -> SHA-256 freeze",
+    "why_private": "AgentShield_V3 and DRX-SPARK are public repositories, and the fixes to the real historical bugs are in their commits. A snapshot that carried .git would let an agent look up the answer, so no snapshot contains git history."
+  },
+  "composition": {
+    "total_tasks": 12,
+    "by_repository": {
+      "AgentShield_V3": 5,
+      "emotion-like-functional-modulation-main": 4,
+      "DRX-SPARK": 3
+    },
+    "by_category": {
+      "bug_fix": 5,
+      "docs_sync": 2,
+      "fallback": 1,
+      "instrumentation": 1,
+      "integrity": 1,
+      "provenance": 1,
+      "refactor": 1
+    },
+    "by_difficulty": {
+      "easy": 2,
+      "hard": 5,
+      "medium": 5
+    }
+  },
+  "scoring": {
+    "total_per_task": 100,
+    "components": {
+      "functional_correctness": {
+        "max": 60,
+        "rule": "public tests pass AND hidden tests pass"
+      },
+      "hidden_tests": {
+        "max": 20,
+        "rule": "fraction of hidden cases passing"
+      },
+      "constraint_compliance": {
+        "max": 10,
+        "rule": "no frozen file modified"
+      },
+      "no_regression": {
+        "max": 10,
+        "rule": "pre-existing suite still green"
+      }
+    },
+    "task_success": {
+      "type": "binary",
+      "requires_all": [
+        "public tests pass",
+        "hidden tests pass",
+        "no forbidden file modification",
+        "no regression"
+      ],
+      "headline": "Task Success Rate = successes / 12"
+    },
+    "reported": {
+      "Task Success Rate": "successes / total",
+      "Bug Fix Success": "AgentShield arm only",
+      "Multi-file Success": "Emotion + DRX-SPARK arms",
+      "Constraint Compliance": "share of tasks with zero frozen-file violations",
+      "Regression Rate": "share of tasks whose pre-existing suite went red",
+      "Human Intervention Rate": "share of runs needing a manual edit to finish"
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "RB-AS-001",
+      "repository": "AgentShield_V3",
+      "category": "bug_fix",
+      "task_type": null,
+      "capabilities": [],
+      "difficulty": "medium",
+      "prompt": "A benchmark adapter passes evaluation-only fields into the model input path. Locate the leak and fix it without changing the output schema",
+      "constraints": [
+        "不得修改 grader",
+        "不得删除测试",
+        "保持 CLI backward compatibility",
+        "保持输出 schema 不变"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1200,
+      "hidden_case_count": 4,
+      "public_case_count": 0,
+      "ready": true,
+      "frozen_file_count": 1482,
+      "shipped_state": "defective",
+      "defect": {},
+      "paths": {
+        "task_json": "tasks\\RB-AS-001\\task.json",
+        "repo_snapshot": "tasks/RB-AS-001/repo_snapshot",
+        "public_tests": "tasks/RB-AS-001/public_tests",
+        "hidden_tests": "tasks/RB-AS-001/hidden_tests",
+        "checksums": "tasks/RB-AS-001/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-AS-002",
+      "repository": "AgentShield_V3",
+      "category": "bug_fix",
+      "task_type": "hidden_only_bug",
+      "capabilities": [
+        "config propagation tracing",
+        "recorded value vs effective value",
+        "TTL / lifecycle semantics",
+        "caller-supplied override handling"
+      ],
+      "difficulty": "medium",
+      "prompt": "A session records the TTL it was registered with, and that recorded value is used to decide whether the session is still alive. When a caller supplies an explicit TTL at registration time the recorded metadata and the effective expiry can disagree: the session is treated as having the default lifetime while its recorded TTL says otherwise, so a session expires at the wrong time and the expiry check disagrees with what was recorded. Fix the propagation so the TTL that was actually requested is the one that governs the session. Explicitly passing the default value must remain equivalent to passing nothing.",
+      "constraints": [
+        "不得修改测试",
+        "不得修改 grader",
+        "不得改变 public API 签名或默认行为",
+        "不得改变环境变量默认值的语义",
+        "不得让显式传入默认值退化为无限或其他值"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1200,
+      "hidden_case_count": 4,
+      "public_case_count": 3,
+      "ready": true,
+      "frozen_file_count": 1532,
+      "shipped_state": "defective",
+      "defect": {},
+      "paths": {
+        "task_json": "tasks\\RB-AS-002\\task.json",
+        "repo_snapshot": "tasks/RB-AS-002/repo_snapshot",
+        "public_tests": "tasks/RB-AS-002/public_tests",
+        "hidden_tests": "tasks/RB-AS-002/hidden_tests",
+        "checksums": "tasks/RB-AS-002/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-AS-003",
+      "repository": "AgentShield_V3",
+      "category": "bug_fix",
+      "task_type": "hidden_only_bug",
+      "capabilities": [
+        "cache invalidation reasoning",
+        "dirty-state tracking",
+        "incremental vs full recomputation",
+        "change propagation through a graph"
+      ],
+      "difficulty": "hard",
+      "prompt": "Writing a governed risk back onto an existing node updates the node's own recorded risk and its status counters, but the aggregate risk that downstream queries serve does not always reflect that change. Repeated queries return the previously computed value instead of recomputing, so the graph reports a stale total for a node that was just rewritten. Fix the freshness tracking so that rewriting a node's risk causes the affected part of the graph to be recomputed. Do not disable or bypass the incremental cache: unchanged parts of the graph must still be served from cache, and the cache must still be correct for an unchanged graph.",
+      "constraints": [
+        "不得修改测试",
+        "不得修改 grader",
+        "不得关闭或禁用缓存",
+        "不得改为每次全量重算",
+        "不得删除 _total_risk_cache / _topo_cache / _dirty_nodes",
+        "不得改变 public API 或返回结构"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1800,
+      "hidden_case_count": 4,
+      "public_case_count": 3,
+      "ready": true,
+      "frozen_file_count": 1532,
+      "shipped_state": "defective",
+      "defect": {},
+      "paths": {
+        "task_json": "tasks\\RB-AS-003\\task.json",
+        "repo_snapshot": "tasks/RB-AS-003/repo_snapshot",
+        "public_tests": "tasks/RB-AS-003/public_tests",
+        "hidden_tests": "tasks/RB-AS-003/hidden_tests",
+        "checksums": "tasks/RB-AS-003/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-AS-004",
+      "repository": "AgentShield_V3",
+      "category": "docs_sync",
+      "task_type": "docs_consistency",
+      "capabilities": [
+        "authoritative source determination",
+        "multi-location consistency",
+        "artifact tracing",
+        "distinguishing passed-count from collected-count"
+      ],
+      "difficulty": "easy",
+      "prompt": "Several places in this repository state how large its test suite is, and the statements disagree with each other. Establish what the suite actually contains, decide which source is authoritative, and make the statements agree with it. Do not modify tests, graders, or any result artifact, and do not rerun the benchmarks. Stated values must be traceable to a real measurement, and a figure that counts collected tests is not interchangeable with one that counts passing tests.",
+      "constraints": [
+        "不得修改测试",
+        "不得修改 grader",
+        "不得重跑 benchmark",
+        "不得修改任何结果 artifact 以迎合文档",
+        "不得删改被文档引用的脚本",
+        "不得把 collected counts 与 passed counts 混用"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 900,
+      "hidden_case_count": 3,
+      "public_case_count": 3,
+      "ready": true,
+      "frozen_file_count": 1532,
+      "shipped_state": "defective",
+      "defect": {},
+      "paths": {
+        "task_json": "tasks\\RB-AS-004\\task.json",
+        "repo_snapshot": "tasks/RB-AS-004/repo_snapshot",
+        "public_tests": "tasks/RB-AS-004/public_tests",
+        "hidden_tests": "tasks/RB-AS-004/hidden_tests",
+        "checksums": "tasks/RB-AS-004/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-AS-005",
+      "repository": "AgentShield_V3",
+      "category": "refactor",
+      "task_type": "behavior_preserving_refactor",
+      "capabilities": [
+        "duplicate-logic recognition",
+        "behaviour-preserving refactoring",
+        "shared-helper extraction",
+        "public API stability"
+      ],
+      "difficulty": "hard",
+      "prompt": "Tool-name canonicalisation is implemented identically in two places: a private helper in the provenance-signals module, and an inlined expression in the trust-policy module's classification path. The two must not be allowed to drift. Converge them onto a single canonical implementation used by both call paths, without changing any observable behaviour. Classifying a tool, computing a provenance signal, and the public API surface must all behave exactly as before, for every input, including empty and non-string ones.",
+      "constraints": [
+        "不得修改测试",
+        "不得修改 grader",
+        "不得改变任何可观测行为",
+        "不得改变 public API 签名或返回结构",
+        "不得删除既有函数或改变其可见性以外的属性",
+        "两条调用路径都必须真正使用同一个实现"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1800,
+      "hidden_case_count": 4,
+      "public_case_count": 3,
+      "ready": true,
+      "frozen_file_count": 1532,
+      "shipped_state": "defective",
+      "defect": {},
+      "paths": {
+        "task_json": "tasks\\RB-AS-005\\task.json",
+        "repo_snapshot": "tasks/RB-AS-005/repo_snapshot",
+        "public_tests": "tasks/RB-AS-005/public_tests",
+        "hidden_tests": "tasks/RB-AS-005/hidden_tests",
+        "checksums": "tasks/RB-AS-005/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-EM-001",
+      "repository": "emotion-like-functional-modulation-main",
+      "category": "bug_fix",
+      "task_type": "hidden_only_bug",
+      "capabilities": [
+        "propagation-chain tracing",
+        "execution state vs recorded metadata",
+        "experimental reproducibility",
+        "multi-seed validity"
+      ],
+      "difficulty": "medium",
+      "prompt": "A seed configuration is not propagated to the experiment runner, so repeated experiments all run with the same seed. Fix the propagation",
+      "constraints": [
+        "不得修改测试",
+        "不得固定随机数以迎合结果"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1200,
+      "hidden_case_count": 3,
+      "public_case_count": 3,
+      "ready": true,
+      "frozen_file_count": 156,
+      "shipped_state": "defective",
+      "defect": {},
+      "paths": {
+        "task_json": "tasks\\RB-EM-001\\task.json",
+        "repo_snapshot": "tasks/RB-EM-001/repo_snapshot",
+        "public_tests": "tasks/RB-EM-001/public_tests",
+        "hidden_tests": "tasks/RB-EM-001/hidden_tests",
+        "checksums": "tasks/RB-EM-001/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-EM-002",
+      "repository": "emotion-like-functional-modulation-main",
+      "category": "bug_fix",
+      "task_type": "hidden_only_bug",
+      "capabilities": [
+        "statistical correctness",
+        "sample vs population variance",
+        "edge-case reasoning",
+        "minimal-change discipline"
+      ],
+      "difficulty": "hard",
+      "prompt": "The multi-seed aggregation computes the mean and standard deviation incorrectly and mishandles missing runs. Fix both",
+      "constraints": [
+        "不得修改测试",
+        "不得丢弃缺失 run 的记录"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1200,
+      "hidden_case_count": 3,
+      "public_case_count": 3,
+      "ready": true,
+      "frozen_file_count": 156,
+      "shipped_state": "defective",
+      "defect": {},
+      "paths": {
+        "task_json": "tasks\\RB-EM-002\\task.json",
+        "repo_snapshot": "tasks/RB-EM-002/repo_snapshot",
+        "public_tests": "tasks/RB-EM-002/public_tests",
+        "hidden_tests": "tasks/RB-EM-002/hidden_tests",
+        "checksums": "tasks/RB-EM-002/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-EM-003",
+      "repository": "emotion-like-functional-modulation-main",
+      "category": "docs_sync",
+      "task_type": null,
+      "capabilities": [],
+      "difficulty": "easy",
+      "prompt": "The README benchmark figures disagree with the current frozen results. Sync the docs from the actual artifacts without rerunning any experiment",
+      "constraints": [
+        "不得重跑实验",
+        "不得修改测试",
+        "不得修改被引用的脚本"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 900,
+      "hidden_case_count": 2,
+      "public_case_count": 0,
+      "ready": false,
+      "frozen_file_count": 0,
+      "shipped_state": "unknown",
+      "defect": {},
+      "paths": {
+        "task_json": null,
+        "repo_snapshot": "tasks/RB-EM-003/repo_snapshot",
+        "public_tests": "tasks/RB-EM-003/public_tests",
+        "hidden_tests": "tasks/RB-EM-003/hidden_tests",
+        "checksums": "tasks/RB-EM-003/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-EM-004",
+      "repository": "emotion-like-functional-modulation-main",
+      "category": "instrumentation",
+      "task_type": "public_visible_bug",
+      "capabilities": [
+        "frozen protocol compliance",
+        "paired counterfactual reasoning",
+        "behaviour-preserving instrumentation",
+        "attribution arithmetic"
+      ],
+      "difficulty": "medium",
+      "prompt": "Add per-step diagnostics output while keeping existing behaviour and all tests unchanged",
+      "constraints": [
+        "不得改变已有行为",
+        "不得修改测试",
+        "不得删除输出"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1200,
+      "hidden_case_count": 3,
+      "public_case_count": 3,
+      "ready": true,
+      "frozen_file_count": 203,
+      "shipped_state": "defective",
+      "defect": {},
+      "paths": {
+        "task_json": "tasks\\RB-EM-004\\task.json",
+        "repo_snapshot": "tasks/RB-EM-004/repo_snapshot",
+        "public_tests": "tasks/RB-EM-004/public_tests",
+        "hidden_tests": "tasks/RB-EM-004/hidden_tests",
+        "checksums": "tasks/RB-EM-004/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-PS-001",
+      "repository": "DRX-SPARK",
+      "category": "fallback",
+      "task_type": null,
+      "capabilities": [],
+      "difficulty": "medium",
+      "prompt": "When the plant-vision skill fails, evidence fusion does not take the correct degraded path. Fix the fallback",
+      "constraints": [
+        "不得绕过 skill 失败",
+        "不得隐藏失败",
+        "不得修改测试"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1200,
+      "hidden_case_count": 3,
+      "public_case_count": 0,
+      "ready": false,
+      "frozen_file_count": 0,
+      "shipped_state": "unknown",
+      "defect": {},
+      "paths": {
+        "task_json": null,
+        "repo_snapshot": "tasks/RB-PS-001/repo_snapshot",
+        "public_tests": "tasks/RB-PS-001/public_tests",
+        "hidden_tests": "tasks/RB-PS-001/hidden_tests",
+        "checksums": "tasks/RB-PS-001/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-PS-002",
+      "repository": "DRX-SPARK",
+      "category": "provenance",
+      "task_type": null,
+      "capabilities": [],
+      "difficulty": "hard",
+      "prompt": "The provenance recorded in the emitted evidence disagrees with the real input manifest. Fix the provenance chain",
+      "constraints": [
+        "不得硬编码 provenance",
+        "不得修改测试"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1800,
+      "hidden_case_count": 3,
+      "public_case_count": 0,
+      "ready": false,
+      "frozen_file_count": 0,
+      "shipped_state": "unknown",
+      "defect": {},
+      "paths": {
+        "task_json": null,
+        "repo_snapshot": "tasks/RB-PS-002/repo_snapshot",
+        "public_tests": "tasks/RB-PS-002/public_tests",
+        "hidden_tests": "tasks/RB-PS-002/hidden_tests",
+        "checksums": "tasks/RB-PS-002/checksums.sha256"
+      }
+    },
+    {
+      "task_id": "RB-PS-003",
+      "repository": "DRX-SPARK",
+      "category": "integrity",
+      "task_type": null,
+      "capabilities": [],
+      "difficulty": "hard",
+      "prompt": "After adding a new skill the registry loads, but the signature verification chain regressed. Fix it without bypassing verification",
+      "constraints": [
+        "不得绕过签名验证",
+        "不得禁用校验",
+        "不得修改测试"
+      ],
+      "test_command": "pytest -q",
+      "timeout_seconds": 1800,
+      "hidden_case_count": 3,
+      "public_case_count": 0,
+      "ready": false,
+      "frozen_file_count": 0,
+      "shipped_state": "unknown",
+      "defect": {},
+      "paths": {
+        "task_json": null,
+        "repo_snapshot": "tasks/RB-PS-003/repo_snapshot",
+        "public_tests": "tasks/RB-PS-003/public_tests",
+        "hidden_tests": "tasks/RB-PS-003/hidden_tests",
+        "checksums": "tasks/RB-PS-003/checksums.sha256"
+      }
+    }
+  ]
+}

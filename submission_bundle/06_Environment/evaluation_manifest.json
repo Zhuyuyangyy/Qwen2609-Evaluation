@@ -1,0 +1,81 @@
+{
+  "benchmark": "RealRepoBench-Q2609",
+  "version": "0.1",
+  "frozen_tasks": 8,
+  "fresh_session_required": true,
+  "workspace_root": "workspaces",
+  "tasks": [
+    {
+      "task_id": "RB-AS-001",
+      "workspace_path": "workspaces\\RB-AS-001",
+      "prompt_path": "workspaces\\RB-AS-001\\prompt.md",
+      "repository": "AgentShield_V3",
+      "difficulty": "medium",
+      "public_tests_dir": "workspaces\\RB-AS-001\\public_tests",
+      "fresh_session_required": true
+    },
+    {
+      "task_id": "RB-AS-002",
+      "workspace_path": "workspaces\\RB-AS-002",
+      "prompt_path": "workspaces\\RB-AS-002\\prompt.md",
+      "repository": "AgentShield_V3",
+      "difficulty": "medium",
+      "public_tests_dir": "workspaces\\RB-AS-002\\public_tests",
+      "fresh_session_required": true
+    },
+    {
+      "task_id": "RB-AS-003",
+      "workspace_path": "workspaces\\RB-AS-003",
+      "prompt_path": "workspaces\\RB-AS-003\\prompt.md",
+      "repository": "AgentShield_V3",
+      "difficulty": "hard",
+      "public_tests_dir": "workspaces\\RB-AS-003\\public_tests",
+      "fresh_session_required": true
+    },
+    {
+      "task_id": "RB-AS-004",
+      "workspace_path": "workspaces\\RB-AS-004",
+      "prompt_path": "workspaces\\RB-AS-004\\prompt.md",
+      "repository": "AgentShield_V3",
+      "difficulty": "easy",
+      "public_tests_dir": "workspaces\\RB-AS-004\\public_tests",
+      "fresh_session_required": true
+    },
+    {
+      "task_id": "RB-AS-005",
+      "workspace_path": "workspaces\\RB-AS-005",
+      "prompt_path": "workspaces\\RB-AS-005\\prompt.md",
+      "repository": "AgentShield_V3",
+      "difficulty": "hard",
+      "public_tests_dir": "workspaces\\RB-AS-005\\public_tests",
+      "fresh_session_required": true
+    },
+    {
+      "task_id": "RB-EM-001",
+      "workspace_path": "workspaces\\RB-EM-001",
+      "prompt_path": "workspaces\\RB-EM-001\\prompt.md",
+      "repository": "emotion-like-functional-modulation-main",
+      "difficulty": "medium",
+      "public_tests_dir": "workspaces\\RB-EM-001\\public_tests",
+      "fresh_session_required": true
+    },
+    {
+      "task_id": "RB-EM-002",
+      "workspace_path": "workspaces\\RB-EM-002",
+      "prompt_path": "workspaces\\RB-EM-002\\prompt.md",
+      "repository": "emotion-like-functional-modulation-main",
+      "difficulty": "hard",
+      "public_tests_dir": "workspaces\\RB-EM-002\\public_tests",
+      "fresh_session_required": true
+    },
+    {
+      "task_id": "RB-EM-004",
+      "workspace_path": "workspaces\\RB-EM-004",
+      "prompt_path": "workspaces\\RB-EM-004\\prompt.md",
+      "repository": "emotion-like-functional-modulation-main",
+      "difficulty": "medium",
+      "public_tests_dir": "workspaces\\RB-EM-004\\public_tests",
+      "fresh_session_required": true
+    }
+  ]
+}

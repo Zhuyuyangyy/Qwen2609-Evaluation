@@ -1,0 +1,54 @@
+[tool.ruff]
+# Explicit rule selection. An unpinned `pip install ruff` in CI resolves to the
+# latest release, and ruff's default rule set grew over time -- a run that is
+# green locally can go red on CI purely because new rules switched on. Pinning
+# the selection here (and the version in CI) makes lint results reproducible.
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings
+    "I",   # import sorting
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+    "SIM", # flake8-simplify
+    "RUF", # ruff-specific
+]
+
+ignore = [
+    "E501",  # line length is enforced by the formatter, not the linter
+    "E741",  # single-letter names are fine in comprehension-style benchmark code
+    "B008",  # function-call-in-default-argument: FastAPI depends on this pattern
+    # The project's prose is Chinese; full-width punctuation in docstrings and
+    # comments is correct writing, not an ambiguous-unicode defect. 242 of the
+    # default-set findings were exactly this.
+    "RUF001",
+    "RUF002",
+    "RUF003",
+    # PEP 604/585 rewrites are large mechanical churn on a Python 3.9+ codebase
+    # that still annotates with typing.Dict in places. Not worth the diff noise.
+    "UP006",
+    "UP007",
+    "UP035",
+    "UP045",
+    "UP009",
+    # str+Enum is the py3.9-compatible idiom; StrEnum needs 3.11+.
+    "UP042",
+    # Rule is not worth the churn on this codebase:
+    "B007",  # flags the key of dict comprehensions, which cannot be renamed
+    "B905",  # zip(strict=) is 3.10+; target-version keeps 3.9 compat
+    "SIM102",  # nested `if` is often clearer for guard-then-act
+    "SIM103",  # `return bool(x)` documents intent better than `return x`
+    "SIM108",  # explicit if/else reads better than a nested ternary here
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Research scripts legitimately insert sys.path before importing local modules,
+# and use single-letter loop variables.
+"benchmark/**" = ["E402", "E741", "I001", "RUF012"]
+"scripts/**" = ["E402", "E741", "I001", "RUF012"]
+# Tests assert on exception types and use fixtures that ignore arguments.
+"backend/tests/**" = ["B017", "ARG", "RUF059"]

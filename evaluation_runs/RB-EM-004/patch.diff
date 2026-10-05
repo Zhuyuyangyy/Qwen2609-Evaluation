@@ -1,0 +1,16 @@
+COMMAND: git diff
+
+warning: in the working copy of 'repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py', LF will be replaced by CRLF the next time Git touches it
+diff --git a/repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py b/repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py
+index 58c9ecf..b41a9ae 100644
+--- a/repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py
++++ b/repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py
+@@ -77,7 +77,7 @@ def run_pair(r_base_mode: str, feedback: str, seed: int, pool: TaskPool) -> Dict
+         r.unsafe_executed_reference = f
+         for key, val in comp.items():
+             setattr(r, key + "_ref", val)
+-        r.delta_J_vs_stateless = round(r.step_J - 0.0, 4)
++        r.delta_J_vs_stateless = round(r.step_J - c, 4)
+ 
+     return {
+         "records": rec.records,

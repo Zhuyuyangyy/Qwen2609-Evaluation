@@ -1,0 +1,37 @@
+{
+  "cell_summary": {
+    "kind": "cell_summary",
+    "cell_run_id": "c0714f3e35a8473f949431cec60ad9e4",
+    "iterations": 1,
+    "gate_calls": 1,
+    "allow": 1,
+    "review": 0,
+    "block": 0,
+    "blocked_calls": 0,
+    "executed_calls": 1,
+    "taint_artifacts": 0
+  },
+  "gate_calls": [
+    {
+      "kind": "gate_call",
+      "cell_run_id": "c0714f3e35a8473f949431cec60ad9e4",
+      "iteration": 1,
+      "tool_call_id": "chatcmpl-tool-9302e72f7d498ae5",
+      "tool": "send_email",
+      "decision": "allow",
+      "risk_score": 0.0,
+      "risk_level": null,
+      "signals": [],
+      "graph_risk_state": {
+        "signals": []
+      },
+      "reason": "",
+      "node_id": "free_edc23eda",
+      "parent_node_id": null,
+      "blocked": false,
+      "executed": true,
+      "outcome": "executed",
+      "error": null
+    }
+  ]
+}

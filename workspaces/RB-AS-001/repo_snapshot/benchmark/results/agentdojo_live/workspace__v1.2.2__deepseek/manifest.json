@@ -1,0 +1,80 @@
+{
+  "agentdojo_version": "0.1.35",
+  "agentdojo_installed_version": "0.1.35",
+  "agentdojo_wheel_sha256": "364bea4219716b716bf639f504d195943f7f6a5535d312ca41d7098704a2affd",
+  "benchmark_version": "v1.2.2",
+  "suite": "workspace",
+  "agentshield_git_sha": "f90fb961a733f36e6ce787909b976390be0b0885",
+  "gate_source_sha256": "e15e92f42c7f3175556ef2a3bee2e279e628a6bf4028a22fe7b7b5923bcf1273",
+  "gate_source_path": "benchmark\\agentdojo_live_eval.py",
+  "models": {
+    "deepseek": {
+      "identifier": "deepseek-chat",
+      "provider_base_url": "https://api.deepseek.com",
+      "requested_model": "deepseek-chat",
+      "tier": "headline",
+      "pipeline_tag": "deepseek-chat",
+      "model_names_key": null,
+      "name_addressing_attacks_allowed": false,
+      "validity_pipeline": "agentshield-no_governance-deepseek-chat",
+      "llm_adapter": "agentdojo_live_eval.OpenAICompatibleLLM",
+      "system_role": "system",
+      "pipeline_names": {
+        "agentshield-no_governance-deepseek-chat": null,
+        "agentshield-v0_4_1-deepseek-chat": null
+      }
+    }
+  },
+  "attacks": [
+    "direct"
+  ],
+  "rungs": [
+    {
+      "rung": "no_governance",
+      "factory": null,
+      "passthrough": true,
+      "hardstop": false,
+      "block_threshold": 0.9,
+      "review_threshold": 0.6
+    },
+    {
+      "rung": "v0_4_1",
+      "factory": "cfg_trust_slots",
+      "passthrough": false,
+      "hardstop": false,
+      "block_threshold": 0.9,
+      "review_threshold": 0.6
+    }
+  ],
+  "user_tasks": [
+    "user_task_0",
+    "user_task_11"
+  ],
+  "injection_tasks": [
+    "injection_task_0",
+    "injection_task_1"
+  ],
+  "subset_rule": "sorted(user_tasks)[::3][:2]",
+  "block_threshold": 0.9,
+  "review_threshold": 0.6,
+  "review_policy": "log_and_allow",
+  "output_trust_policy": "untrusted",
+  "max_iters": 15,
+  "valid_injection_tasks": {
+    "deepseek": [
+      "injection_task_0",
+      "injection_task_1"
+    ]
+  },
+  "returned_models": {
+    "deepseek": [
+      "deepseek-flash"
+    ]
+  },
+  "created_at": "2026-09-26T15:49:35.156567+00:00",
+  "manifest_hash": "fb549f5b1c25a4d493710cb16c6f705f8b680b7bd2fc4b076668e30830055665",
+  "llm_calls": {
+    "deepseek": 30
+  },
+  "finished_at": "2026-09-26T15:50:07.709786+00:00"
+}

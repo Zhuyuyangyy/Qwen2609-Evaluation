@@ -1,0 +1,93 @@
+{
+  "experiment": "prediction_invariance_isolation",
+  "method": "Permute evaluation-only metadata, hold the runtime observation constant, and require the prediction to be unchanged. An accuracy drop under shuffled labels is not evidence of leakage.",
+  "dataset": "test_cases_sci_600",
+  "forbidden_fields_tested": [
+    "attack_name",
+    "attack_stage",
+    "category",
+    "chain_id",
+    "expected_action",
+    "expected_label",
+    "expected_risk_score",
+    "grading_function",
+    "injection_goal",
+    "injection_task_id",
+    "label",
+    "rationale",
+    "step_index",
+    "target_functions",
+    "v3_specific",
+    "v3_standard_action"
+  ],
+  "permutations_per_case": 8,
+  "seed": 20260923,
+  "cases_tested": 60,
+  "methods_tested": 7,
+  "total_permutation_checks": 3360,
+  "changed_predictions": 0,
+  "prediction_invariance_rate": 1.0,
+  "per_method": {
+    "agentshield_production": {
+      "cases": 60,
+      "metadata_permutations": 480,
+      "changed_predictions": 0,
+      "prediction_invariance_rate": 1.0,
+      "isolated": true,
+      "violations": []
+    },
+    "tool_name_rules": {
+      "cases": 60,
+      "metadata_permutations": 480,
+      "changed_predictions": 0,
+      "prediction_invariance_rate": 1.0,
+      "isolated": true,
+      "violations": []
+    },
+    "content_keywords": {
+      "cases": 60,
+      "metadata_permutations": 480,
+      "changed_predictions": 0,
+      "prediction_invariance_rate": 1.0,
+      "isolated": true,
+      "violations": []
+    },
+    "local_context": {
+      "cases": 60,
+      "metadata_permutations": 480,
+      "changed_predictions": 0,
+      "prediction_invariance_rate": 1.0,
+      "isolated": true,
+      "violations": []
+    },
+    "llm_as_judge": {
+      "cases": 60,
+      "metadata_permutations": 480,
+      "changed_predictions": 0,
+      "prediction_invariance_rate": 1.0,
+      "isolated": true,
+      "violations": []
+    },
+    "agentshield_no_graph": {
+      "cases": 60,
+      "metadata_permutations": 480,
+      "changed_predictions": 0,
+      "prediction_invariance_rate": 1.0,
+      "isolated": true,
+      "violations": []
+    },
+    "agentshield_graph_only": {
+      "cases": 60,
+      "metadata_permutations": 480,
+      "changed_predictions": 0,
+      "prediction_invariance_rate": 1.0,
+      "isolated": true,
+      "violations": []
+    }
+  },
+  "retired_metrics": [
+    "accuracy_delta",
+    "leakage_suspected",
+    "shuffled_accuracy"
+  ]
+}

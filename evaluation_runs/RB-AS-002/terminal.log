@@ -1,0 +1,58 @@
+# RB-AS-002 — Qoder terminal trace
+
+Model: qwen-latest-series-invite-2609
+Harness: Qoder
+Workspace: D:\ZYY Project\Qwen2609-Evaluation\workspaces\B-AS-002
+
+## Session flow (condensed; no grader verdicts included)
+
+1. Entry survey
+   - `git status` -> single modified file `repo_snapshot/backend/app/shield/session_ttl.py`,
+     untracked `public_tests/__pycache__/`.
+   - `git diff` -> the carried fix inside `SessionTTLManager.register_session`:
+     `ttl_seconds=self.default_ttl` was replaced with the caller-aware
+     `ttl_seconds=self.default_ttl if ttl_seconds is None else ttl_seconds`.
+   - Read `prompt.md`: TTL that was actually requested must govern the session;
+     explicitly passing the default must stay equivalent to passing nothing.
+
+2. Defect understanding
+   - Read `repo_snapshot/backend/app/shield/session_ttl.py`.
+   - `SessionMetadata.is_expired` / `remaining_seconds` consult
+     `meta.ttl_seconds`, i.e. the recorded value governs the expiry check.
+   - `register_session` unconditionally recorded `self.default_ttl`, so a
+     caller-supplied `ttl_seconds` never reached the metadata: recorded and
+     effective values disagreed, session expired at the wrong time.
+   - `__init__` keeps `self.default_ttl = default_ttl or self.DEFAULT_TTL`
+     (env var `AGENTSHIELD_SESSION_TTL`, default 86400) -- untouched.
+
+3. Contract confirmation
+   - Read `public_tests/test_public.py`: registration returns metadata, the
+     recorded TTL is what expiry consults, omitting yields the manager
+     default, and explicit default == omitted.
+   - Public API surface checked: `register_session`, `touch_session`,
+     `get_session`, `remove_session`, `get_expired_sessions`,
+     `maybe_cleanup` -- all present with unchanged signatures.
+
+4. Public tests
+   - `python -m pytest -q test_public.py` in `public_tests/` -> 6 passed.
+     Full stdout saved to `public_test.log`.
+
+5. Private grading (run externally, not fed back into this session)
+   - Built an isolated staging tree OUTSIDE the task workspace
+     (`.grade_stage_RB-AS-002/`) holding:
+       - `submission/`   copy of the fixed `repo_snapshot`
+       - `repo_snapshot/` + `workspace_public/` for the public check
+       - `hidden_root/hidden_tests/test_hidden.py` + its own `repo_snapshot`
+   - Ran the three isolated pytest legs (public / hidden / regression) with
+     only aggregated counts written to sidecar JSON; verbose logs stayed on
+     disk under the staging directory.
+   - Verified frozen-file checksums (`backend/tests/**`, `pytest.ini`):
+     0 violations, 23 files checked.
+   - Invoked the benchmark's private grader `RealRepoBench-Q2609/grader/score.py`
+     on the assembled run dir; `Score.to_dict()` was written verbatim to
+     `grade.json`.
+   - The grader's output was deliberately NOT echoed into this Qoder session.
+
+6. Cleanup
+   - External staging tree removed after grading; the task workspace kept only
+     the intended source change plus the exported run directory artifacts.

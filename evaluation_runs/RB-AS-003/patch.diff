@@ -1,0 +1,13 @@
+diff --git a/repo_snapshot/backend/app/shield/agent_behavior_graph.py b/repo_snapshot/backend/app/shield/agent_behavior_graph.py
+index 50cd3c9..4055d93 100644
+--- a/repo_snapshot/backend/app/shield/agent_behavior_graph.py
++++ b/repo_snapshot/backend/app/shield/agent_behavior_graph.py
+@@ -262,6 +262,8 @@ class AgentBehaviorGraph:
+         if fuse_action is not None:
+             node.fuse_action = fuse_action
+         self._bump_status_counters(before, node)
++        # 本地风险被改写，需重算该节点及其下游（上游不受影响，仍走缓存）。
++        self._mark_dirty(node.node_id)
+         return node
+ 
+     # ─── 图查询 ──────────────────────────────────────────────

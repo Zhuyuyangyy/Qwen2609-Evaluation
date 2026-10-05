@@ -1,0 +1,25 @@
+dataset,ablated_component,metric,full_value,ablated_value,delta,delta_pct
+/workspace/benchmark/test_cases/test_cases_sci_600.json,1  −stage boost,action_accuracy,0.7533,0.7583,0.0050,0.66
+/workspace/benchmark/test_cases/test_cases_sci_600.json,1  −stage boost,macro_f1,0.7261,0.7335,0.0074,1.02
+/workspace/benchmark/test_cases/test_cases_sci_600.json,1  −stage boost,block_recall,0.8479,0.8479,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,1  −stage boost,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,2  −category×chain boost,action_accuracy,0.7533,0.7583,0.0050,0.66
+/workspace/benchmark/test_cases/test_cases_sci_600.json,2  −category×chain boost,macro_f1,0.7261,0.7335,0.0074,1.02
+/workspace/benchmark/test_cases/test_cases_sci_600.json,2  −category×chain boost,block_recall,0.8479,0.8479,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,2  −category×chain boost,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,3  −external+sensitive boost,action_accuracy,0.7533,0.7533,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,3  −external+sensitive boost,macro_f1,0.7261,0.7261,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,3  −external+sensitive boost,block_recall,0.8479,0.8479,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,3  −external+sensitive boost,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,4  −audit/evasion boosts,action_accuracy,0.7533,0.7517,-0.0016,-0.21
+/workspace/benchmark/test_cases/test_cases_sci_600.json,4  −audit/evasion boosts,macro_f1,0.7261,0.7260,-0.0001,-0.01
+/workspace/benchmark/test_cases/test_cases_sci_600.json,4  −audit/evasion boosts,block_recall,0.8479,0.7926,-0.0553,-6.52
+/workspace/benchmark/test_cases/test_cases_sci_600.json,4  −audit/evasion boosts,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,5  −special-case rules,action_accuracy,0.7533,0.5133,-0.2400,-31.86
+/workspace/benchmark/test_cases/test_cases_sci_600.json,5  −special-case rules,macro_f1,0.7261,0.4778,-0.2483,-34.2
+/workspace/benchmark/test_cases/test_cases_sci_600.json,5  −special-case rules,block_recall,0.8479,0.8479,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,5  −special-case rules,false_allow_rate,0.0000,0.0000,0.0000,0.0
+/workspace/benchmark/test_cases/test_cases_sci_600.json,6  Local context (all chain),action_accuracy,0.7533,0.6267,-0.1266,-16.81
+/workspace/benchmark/test_cases/test_cases_sci_600.json,6  Local context (all chain),macro_f1,0.7261,0.6098,-0.1163,-16.02
+/workspace/benchmark/test_cases/test_cases_sci_600.json,6  Local context (all chain),block_recall,0.8479,0.7696,-0.0783,-9.23
+/workspace/benchmark/test_cases/test_cases_sci_600.json,6  Local context (all chain),false_allow_rate,0.0000,0.0000,0.0000,0.0

@@ -1,0 +1,109 @@
+COMMAND: git status
+
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	public_tests/__pycache__/
+	repo_snapshot/emotion_agent/__pycache__/
+	repo_snapshot/experiments/adaptive_v10/__pycache__/
+	repo_snapshot/experiments/benchmark_v4_same_dialogue/__pycache__/
+	repo_snapshot/experiments/rjudge_v2/__pycache__/
+	repo_snapshot/risk_encoder_v2/__pycache__/
+	repo_snapshot/tests/__pycache__/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+COMMAND: git status --porcelain
+
+ M repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py
+?? public_tests/__pycache__/
+?? repo_snapshot/emotion_agent/__pycache__/
+?? repo_snapshot/experiments/adaptive_v10/__pycache__/
+?? repo_snapshot/experiments/benchmark_v4_same_dialogue/__pycache__/
+?? repo_snapshot/experiments/rjudge_v2/__pycache__/
+?? repo_snapshot/risk_encoder_v2/__pycache__/
+?? repo_snapshot/tests/__pycache__/
+
+COMMAND: git status --short --untracked-files=all
+
+ M repo_snapshot/experiments/adaptive_v10/run_v15_attribution.py
+?? public_tests/__pycache__/test_public.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/emotion_agent/__pycache__/__init__.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/adaptive_environment.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/adaptive_metrics.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/adaptive_systems.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/adaptive_v15_instrument.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/affect_regulation.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/affective_benchmark.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/affective_core.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/affective_response.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/affective_spread.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/agent.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/companion_adapter.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/companion_metrics.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/companion_systems.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/conflict_detector.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/counterfactual_simulator.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/decay_clock.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/dual_scale_state.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/emotional_state.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/evaluation_decision.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/event_similarity.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/experience_memory.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/hesitation_policy.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/interaction_policy.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/learning_adaptation.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/llm_output_guard.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/llm_planner.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/memory_system.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/motivation_system.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/phoenix_agent_shield.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/policy_modulator.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/prompt_modulator.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/provider_openai.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/semantic_risk_map.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/social_interaction.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/v09_agent.cpython-312.pyc
+?? repo_snapshot/emotion_agent/__pycache__/working_memory.cpython-312.pyc
+?? repo_snapshot/experiments/adaptive_v10/__pycache__/__init__.cpython-312.pyc
+?? repo_snapshot/experiments/adaptive_v10/__pycache__/run_v15_attribution.cpython-312.pyc
+?? repo_snapshot/experiments/benchmark_v4_same_dialogue/__pycache__/protocol.cpython-312.pyc
+?? repo_snapshot/experiments/benchmark_v4_same_dialogue/__pycache__/run_benchmark.cpython-312.pyc
+?? repo_snapshot/experiments/rjudge_v2/__pycache__/convert_rjudge.cpython-312.pyc
+?? repo_snapshot/experiments/rjudge_v2/__pycache__/failure_analysis.cpython-312.pyc
+?? repo_snapshot/experiments/rjudge_v2/__pycache__/metrics.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/__init__.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/context_aggregator.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/evidence_extractor.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/injection_detector.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/pipeline.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/privacy_leakage_detector.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/semantic_risk_encoder.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/social_engineering_detector.cpython-312.pyc
+?? repo_snapshot/risk_encoder_v2/__pycache__/threshold_calibrator.cpython-312.pyc
+?? repo_snapshot/tests/__pycache__/test_adaptive_v10.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_adaptive_v15_instrument.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_affect_regulation.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_affective_response.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_agent.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_emotional_state.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_evaluation_decision.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_experience_memory.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_learning_adaptation.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_motivation_system.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_p1_interaction_layer.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_p2_companion_layer.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_risk_encoder_v2.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_rjudge_failure_reproduction.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_social_interaction.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_v09_affective_core.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_v0_3.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_v0_4.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_v0_5.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_v0_6.cpython-312-pytest-8.3.4.pyc
+?? repo_snapshot/tests/__pycache__/test_v0_7.cpython-312-pytest-8.3.4.pyc

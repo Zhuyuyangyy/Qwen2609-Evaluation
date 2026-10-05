@@ -1,0 +1,17 @@
+{
+  "ALLOW": {
+    "ALLOW": 16,
+    "HUMAN_REVIEW": 0,
+    "BLOCK": 0
+  },
+  "HUMAN_REVIEW": {
+    "ALLOW": 0,
+    "HUMAN_REVIEW": 39,
+    "BLOCK": 0
+  },
+  "BLOCK": {
+    "ALLOW": 0,
+    "HUMAN_REVIEW": 0,
+    "BLOCK": 45
+  }
+}

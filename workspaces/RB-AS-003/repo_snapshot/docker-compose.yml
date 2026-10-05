@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  agentshield:
+    build: .
+    ports:
+      - "8011:8011"
+    environment:
+      - AGENTSHIELD_STORAGE=sqlite
+      - AGENTSHIELD_DB_PATH=/data/agentshield.db
+      - AGENTSHIELD_SESSION_TTL=86400
+      - AGENTSHIELD_AUTH_DISABLED=true
+      - AGENTSHIELD_CORS_ORIGINS=*
+    volumes:
+      - agentshield-data:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8011/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    profiles:
+      - redis
+
+volumes:
+  agentshield-data:
+  redis-data:

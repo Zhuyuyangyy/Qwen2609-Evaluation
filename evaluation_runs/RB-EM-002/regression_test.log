@@ -1,0 +1,54 @@
+D:\python实验\Lib\site-packages\pytest_asyncio\plugin.py:299: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the "fixture" caching scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session"
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+.................................F...................................... [ 17%]
+........................................................................ [ 34%]
+........................................................................ [ 52%]
+........................................................................ [ 69%]
+........................................................................ [ 87%]
+.....................................................                    [100%]
+================================== FAILURES ===================================
+___________ TestSystemComparability.test_all_systems_run_an_episode ___________
+
+self = <test_adaptive_v10.TestSystemComparability object at 0x000001684AAC1610>
+
+    def test_all_systems_run_an_episode(self):
+        pool = small_pool()
+        for name in SYSTEM_ORDER:
+            env = AdaptiveEnvironment(pool, r_base_mode="noisy", feedback="sparse",
+                                      seed=2, t_safe=5, t_danger=5, t_recovery=5)
+            s = make_system(name)
+            for _ in range(env.T_test):
+                obs = env.begin_step()
+>               res = env.submit(obs, s.act(obs))
+
+tests\test_adaptive_v10.py:238: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <emotion_agent.adaptive_systems.EwmaAppraisalSystem object at 0x000001680B527050>
+obs = Observation(step=1, phase='SAFE', description='Check disk space usage', task_class='recovery_generalization', r_base=0.0, danger=0.0014333095292583698, meta_system='', meta_r_base_mode='', meta_feedback='')
+
+    def act(self, obs: Observation) -> str:
+        from emotion_agent.v09_agent import AgentEvent
+        ev = AgentEvent(task=obs.description, r_base=obs.r_base)
+        self._events.append(ev)
+    
+        # identical evidence extraction to V1.4 (same calls, same formulas)
+        hits = self._agent._memory.retrieve(obs.description)
+        appraisal = self._agent._affect.appraise(ev)
+        if hits:
+            appraisal["novelty"] = round(
+                max(0.0, 1.0 - max(s for _m, s in hits)), 4)
+        budget = self._modulator.modulate(appraisal, dict(_NEUTRAL_STATE), hits)
+    
+        effective = (obs.r_base
+>                    + W_PERSISTENT_STATE * self.hazard_hat
+                     + self._modulator.NEG_MEMORY_WEIGHT * _memory_net(hits)
+                     + W_UNC_V12 * appraisal.get("uncertainty", 0.0))
+E       AttributeError: 'EwmaAppraisalSystem' object has no attribute 'hazard_hat'
+
+emotion_agent\adaptive_systems.py:634: AttributeError
+=========================== short test summary info ===========================
+FAILED tests\test_adaptive_v10.py::TestSystemComparability::test_all_systems_run_an_episode
+1 failed, 412 passed in 9.60s
