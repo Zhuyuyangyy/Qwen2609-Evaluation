@@ -213,6 +213,31 @@ def check() -> List[str]:
         if name == "SUBMISSION_FIELD_FACTS" and TASK_TYPE_PHRASE not in text:
             problems.append(f"{name} lacks the standardised task-type wording")
 
+    # ── 8b. prose must not extrapolate a partial-coverage zero to the whole set
+    # The JSON fields are correct; the risk is a sentence that reads the same
+    # zero as "confirmed across all 8 tasks".
+    import re as _re
+    full_coverage_claims = [
+        r"no task[^.\n]{0,40}recorded[^.\n]{0,30}semantic",
+        r"none[^.\n]{0,20}recorded anywhere",
+        r"zero[- ]resume[^.\n]{0,40}across[^.\n]{0,20}(benchmark|8 tasks)",
+        r"all (8|eight) tasks[^.\n]{0,40}(0|zero|no manual resume)",
+        r"manual resume[^.\n]{0,20}(across|for) (all|every) (8|eight|task)",
+    ]
+    for name, text in (("SUBMISSION_FIELD_FACTS", facts),
+                       ("HARNESS_RELIABILITY_FACTS", harness)):
+        low = text.lower()
+        for pat in full_coverage_claims:
+            if _re.search(pat, low):
+                problems.append(
+                    f"{name} extrapolates a partial-coverage zero to the whole "
+                    f"benchmark (matched /{pat}/)")
+
+    # A zero-resume rate may not be restated as a number.
+    if "12.5" in facts or "87.5" in facts:
+        if "zero-resume" in facts.lower():
+            problems.append("SUBMISSION_FIELD_FACTS quotes a numeric zero-resume rate")
+
     # ── 9. evidence paths that are cited must exist in the bundle ──
     cited = set(re.findall(r"0\d_[A-Za-z_]+/[A-Za-z0-9_.\-]+", facts + harness))
     for rel in sorted(cited):

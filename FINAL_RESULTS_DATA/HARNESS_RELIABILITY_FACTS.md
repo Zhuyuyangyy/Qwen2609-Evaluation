@@ -58,9 +58,11 @@ establish the counts. They were not estimated.
 
 - **manual resume** — a human had to click "continue"/"retry" to make the
   session proceed, without supplying any解题 information.
-- **semantic human intervention** — a human supplied solution information. **No
-  task in this run recorded one.** Both fields are recorded separately so a
-  resume is never miscounted as a hint.
+- **semantic human intervention** — a human supplied solution information.
+  **None is recorded among the 7 tasks whose intervention count was recovered
+  (7/8 coverage)**; the 8th task's count was not recovered, so the statement is
+  not extended to it. Both fields are recorded separately so a resume is never
+  miscounted as a hint.
 
 ## RB-AS-004
 

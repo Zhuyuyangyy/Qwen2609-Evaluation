@@ -27,9 +27,10 @@ value it is marked `NOT_AVAILABLE` or `PARTICIPANT_CONFIRM_REQUIRED`.
 - **Only RB-EM-001 has recovered counts of 0** (0 manual resume, 0 runtime
   error). No other task's count is known, so no run-wide resume or runtime-error
   total is claimed.
-- **No task recorded a semantic human intervention.** A semantic intervention
-  means a human supplied solution information; this is distinct from a manual
-  resume, and neither appears anywhere in the archived evidence.
+- **Among the 7 tasks with a recovered intervention count (7/8 coverage), no
+  semantic human intervention is recorded.** A semantic intervention means a
+  human supplied solution information; it is distinct from a manual resume. The
+  8th task's count was not recovered, so the statement is not extended to it.
 - RB-AS-004 produced **no** stable final submission: 0 tracked `.py` files
   modified, no untracked non-cache files, and the only tracked delta a SQLite
   runtime-state file. Recorded `INFRASTRUCTURE_FAILURE`.
@@ -225,7 +226,7 @@ The participant selects the rating. The observable facts:
 | confirmed tasks needing manual resume | 0 |
 | resume-count known tasks | 1/8 |
 | resume-count unknown tasks | 7/8 |
-| semantic human interventions | none recorded anywhere |
+| semantic human interventions (7/8 covered) | none recorded |
 | infrastructure failures | 1 (RB-AS-004) |
 | median patch size (files) | 1 |
 | public/private grading isolation | verified by audit, 8/8 workspaces clean |
