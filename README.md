@@ -7,6 +7,29 @@ checksummed by the benchmark, and nothing here writes into it: the 8125 frozen
 files are the artifacts the evaluation measures, so the aggregation tooling
 must not be able to touch them.
 
+## What this repository is
+
+**A read-only evaluation reporting workspace — not the benchmark, model weights, or a new grader.** It turns an existing grader's task-level outputs into auditable aggregate reports while keeping the frozen benchmark outside the reporting tool.
+
+| Question | Answer |
+| --- | --- |
+| What goes in? | Per-task `grade.json` plus associated run metadata and logs |
+| What comes out? | Consistent result tables, summary metrics, and categorized failure records |
+| Who decides task success? | The benchmark's grader; `aggregate.py` does **not** substitute its own verdict |
+| What happens with incomplete runs? | No formal success rate is published for partial runs |
+| What should readers inspect first? | [Aggregation code](aggregate.py) · [Regression tests](tests/test_aggregate.py) · [Current reporting artifacts](results/) |
+
+**Reproduce the reporting step**, once you have compatible run outputs:
+
+```bash
+python aggregate.py
+python -m pytest tests/ -q
+```
+
+These commands cover aggregation and local tests. They do **not** recreate the frozen benchmark, re-run model inference, or establish the origin of an input grader's results. See the protocol notes below before comparing numbers across runs.
+
+---
+
 ## Layout
 
 ```
