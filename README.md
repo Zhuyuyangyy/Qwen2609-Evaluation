@@ -19,7 +19,7 @@ must not be able to touch them.
 | What happens with incomplete runs? | No formal success rate is published for partial runs |
 | What should readers inspect first? | [Aggregation code](aggregate.py) · [Regression tests](tests/test_aggregate.py) · [Current reporting artifacts](results/) |
 
-**Reproduce the reporting step**, once you have compatible run outputs:
+**Reproduce the reporting step**, once you have compatible run outputs (Python and `pytest` should be available in your environment):
 
 ```bash
 python aggregate.py
